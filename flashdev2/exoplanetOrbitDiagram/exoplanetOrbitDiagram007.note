@@ -1,0 +1,17 @@
+New flashvars:
+</p>
+
+<ul>
+<li><code>animate</code> - boolean to control whether the diagram is animated; default is false</li>
+<li><code>period</code> - the period of the animation in seconds; default is 5</li>
+<li><code>showStarDirectionArrow, showPlanetDirectionArrow</code> - these booleans can be used to toggle the visibility of the direction arrows individually (they are parsed after <code>showDirectionArrows</code>, so thier value(s) dominate); the default is to show the arrows</li>
+<li><code>showEarthArrow</code> - boolean to show/hide the earth direction arrow; the default is true</li>
+<li><code>perimeterLabels</code> - this comma/semicolon delimited list adds labels around the perimeter; the format is the same as for <code>starLabels</code> and <code>planetLabels</code> below, except that the angle is measured ccw from <i>left</i> (like the earth arrow angle); these labels will rotate with the <code>earthArrowAngle</code>  (so 0° always corresponds with the view from earth arrow)</li>
+</ul>
+
+<p>
+Note that <code>earthArrowAngle</code> still is meaningful (everything will be rotated) even if <code>showEarthArrow</code> is false.
+</p> 
+
+<p>
+The flashvars line for the example above is <code>showEarthArrow=f&perimeterLabels=A,0;B,90;C,180;D,270</code>

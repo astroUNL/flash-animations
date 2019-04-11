@@ -1,0 +1,52 @@
+Added the <code>showAsDisc</code> and <code>textColor</code> options for points &mdash; <a href="eduHRDiagram/eduHRDiagramNotes.txt">updated notes</a></p>
+
+<p>This flash file is designed to produce an HR diagram based on parameters sent by flashvars. For example, the following flashvars string produces the diagram above (where all the text is on one line):</p>
+
+<pre>main=1&hip=1&mass1=1&label1=sun&color1=666666&
+temp2=25000&lum2=150000&label2=A&color2=ee3333&textColor2=ffffff&showAsDisc2=1&
+temp3=4000&lum3=1000&label3=B&color3=00aa33&textColor3=ffffff&showAsDisc3=1&
+temp4=10000&lum4=0.1&label4=C&color4=3333bb&textColor4=ffffff&showAsDisc4=1&
+temp5=3300&lum5=0.01&label5=D&color5=ffbb50&textColor5=ffffff&showAsDisc5=1</pre>
+
+<p>Since flashvars parameters are defined on the root you can also acheive the same result using the following code on the first frame of the main timeline (where diagramMC is the instance name of the HR diagram component):<p>
+
+<pre>
+main = "1";
+hip = "1";
+
+mass1 = "1";
+label1 = "sun";
+color1 = "666666";
+
+temp2 = "25000";
+lum2 = "150000";
+label2 = "A";
+color2 = "ee3333";
+textColor2 = "ffffff";
+showAsDisc2 = "1";
+
+temp3 = "4000";
+lum3 = "1000";
+label3 = "B";
+color3 = "00aa33";
+textColor3 = "ffffff";
+showAsDisc3 = "1";
+
+temp4 = "10000";
+lum4 = "0.1";
+label4 = "C";
+color4 = "3333bb";
+textColor4 = "ffffff";
+showAsDisc4 = "1";
+
+temp5 = "3300";
+lum5 = "0.01";
+label5 = "D";
+color5 = "ffbb50";
+textColor5 = "ffffff";
+showAsDisc5 = "1";
+
+diagramMC.loadParameters();
+</pre>
+
+<p>

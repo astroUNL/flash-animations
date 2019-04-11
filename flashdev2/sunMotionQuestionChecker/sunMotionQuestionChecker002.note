@@ -1,0 +1,7 @@
+This component is used to find the answer to the question "today the sun is X of the ecliptic moving Y", where X and Y are "north" or "south". The component has a function, <code>getAnswer()</code>, which will return an object whose properties indicate what the correct answer is and what feedback string should be used, if any. The feedback string is defined if the current day is within a given window of the closest equinox or solstice.
+</p>
+<p>
+The example above can be used to test the results for days other than the present day (<a href="http://www.srh.noaa.gov/elp/climat/astro/seasons2006.html">solstice and equinox table</a> for reference).
+</p>
+<p>
+The algorithm used will work until 3000CE, after which we will have to replace it with something else.

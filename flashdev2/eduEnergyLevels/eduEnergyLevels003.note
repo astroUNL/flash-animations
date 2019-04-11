@@ -1,0 +1,10 @@
+Added arrow labels. These can be displayed using the following flashvars:
+</p>
+
+<ul>
+<li><code>label<b>X</b></code> - The label string. The substrings '_AU_', '_AD_', '_AL_', and '_AR_' will be replaced by arrow characters pointing up, down, left and right.</li>
+<li><code>labelSize<b>X</b></code> - The font size of the string. the default is 12 points.</li>
+</ul>
+
+<p>The flashvars line for the example above is "showNumbers=1,3&showEnergies=1,3&start1=1&end1=3&label1=1_AR_3".
+ 

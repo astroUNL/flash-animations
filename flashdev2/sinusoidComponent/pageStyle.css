@@ -1,0 +1,148 @@
+
+body {
+	background-color: #FFFFFF;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: verdana, arial, helvetica, sans-serif;
+	color: #000000;
+}
+
+h4 {
+	font-family: courier new, arial;
+	color: #000000;
+}
+
+li {
+	line-height: 1.25;
+	font-size: small;
+	font-family: verdana, arial, helvetica, sans-serif;
+	color: #000000;
+	margin-top: 10px;
+
+}
+
+p {
+	line-height: 1.25;
+	font-size: small;
+	font-family: verdana, arial, helvetica, sans-serif;
+	color: #000000;
+	text-indent: 20px;
+}
+
+
+pre {
+	font-family: courier, monospace;
+	margin-left: 20px;
+}
+
+code {
+	font-family: courier, monospace;
+}
+
+a {
+	color: #1818FF;
+}
+
+hr {
+	height: 6px;
+	width: 90%;
+	background-color: #1818FF;
+	color: #1818FF;
+	border: 2px solid;
+	border-color: #000000;
+}
+
+div.codeLine {
+	line-height: 1;
+	font-size: small;
+	font-family: courier, monospace;
+	color: #000000;
+	margin-left: 40px;
+	text-indent: -20px;
+}
+
+div.indentedBlock {
+	padding-left: 25px;
+}
+
+div.exampleSource {
+	width: 100%;
+	clear: both;
+	text-align: center;
+	font-size: small;
+	font-family: verdana, arial, helvetica, sans-serif;
+}
+
+div.exampleTitle {
+	font-size: large;
+	font-family: verdana, arial, helvetica, sans-serif;
+	color: #000000;
+}
+
+div.exampleBlock {
+	width: 80%;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 15px;
+	border: 1px solid #eeeeee;
+	background-color: #fafafa;
+}
+
+
+
+div.pageBlock {
+	width: 80%;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 0px;
+}
+
+div.pageBreak {
+	padding: 0px;
+	margin: 0px;
+	line-height: 0px;
+	height: 0px;
+	clear: both;
+	width: 100%;
+}
+
+div.figureCenter {
+	padding: 10px;
+	margin: 20px auto 20px auto;
+	border: none;
+	background-color: #FFFFFF;
+}
+
+div.figureRight {
+	padding: 0px;
+	margin: 0px 0px 15px 15px;
+	border: none;
+	background-color: #FFFFFF;
+	float: right;
+}
+
+div.figureLeft {
+	padding: 10px;
+	margin: 0px 20px 20px 0px;
+	border: none;
+	background-color: #FFFFFF;
+	float: left;
+}
+
+div.figureCaption {
+	margin: 5px auto 0px auto;
+	font-size: x-small;
+	font-family: verdana, arial, helvetica, sans-serif;
+	color: #000000;
+	text-align: justify;
+}
+
+div.figureSource {
+	margin: 5px auto 0px auto;
+	font-size: x-small;
+	font-family: verdana, arial, helvetica, sans-serif;
+	font-style: italic;
+	color: #000000;
+	text-align: right;
+}

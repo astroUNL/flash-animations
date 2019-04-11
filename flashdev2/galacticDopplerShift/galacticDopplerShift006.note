@@ -1,0 +1,22 @@
+Possible question wording: "The spectrum of the star at the location shown would be (1) redshifted, (2) blueshifted, or (3) unshifted".</p>
+
+<p>Functions/properties of the diagram component are:</p>
+
+<ul>
+<li><code>setSelectedStar(starNum)</code>
+<li><code>toggleAnimationState()</code></li>
+<li><code>animationState = true/false</code></li>
+</ul>
+
+<p>Answers for the stars are:</p>
+
+<ol>
+<li>redshifted</li>
+<li>unshifted</li>
+<li>blueshifted</li>
+<li>blueshifted</li>
+<li>unshifted</li>
+<li>redshifted</li>
+</ol>
+
+<p>

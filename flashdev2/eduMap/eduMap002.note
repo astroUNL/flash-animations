@@ -1,0 +1,6 @@
+Added two new flashvars parameters:</p>
+<ul>
+<li>showGrid - if showGrid=true then gridlines are added to the map (note that the 180&deg; gridline is replaced with the IDL)</li>
+<li>gridColor - optional parameter to control the color of the grid</li>
+</ul>
+<p>

@@ -1,0 +1,67 @@
+
+
+[titlebar]
+Lunar Phase Simulator
+reset
+help
+about
+
+[visualization panel]
+sunlight
+sunrise
+noon
+sunset
+midnight
+
+[animation and time controls panel]
+Animation and Time Controls
+start animation
+pause animation
+animation rate
+increment animation
+day
+hour
+minute
+
+[diagram options panel]
+Diagram Options
+show angle
+show lunar landmark
+show time tickmarks
+
+[moon phase panel]
+Moon Phase
+New Moon
+Waxing Crescent
+First Quarter
+Waxing Gibbous
+Full Moon
+Waning Gibbous
+Third Quarter
+Waning Crescent
+illuminated
+time since new moon
+day
+days
+hour
+hours
+
+[horizon diagram panel]
+Horizon Diagram
+N
+S
+E
+W
+observer's local time
+am
+pm
+[or do you use a 24-hour]
+
+[labels for buttons in moon phase panel and horizon diagram panel]
+show
+hide
+
+
+
+
+

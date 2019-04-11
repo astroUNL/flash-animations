@@ -1,0 +1,8 @@
+This update fixes a potentially serious problem where the slider could get locked up in an infinite loop. If this were to happen while using the live preview in the authoring environment the flash program would become unresponsive and you'd lose your unsaved work (at least in Flash 6).<p>
+
+<p>Example scenario: you are editing a movie and you have a slider on the stage with a range of 0 to 10, an initial value of 0, and the precision is in fixed digits. If you were to change the precision mode to significant digits Flash will become unresponsive and you will have to have Windows shut down the program, losing unsaved work.</p>
+
+<p>Please note the following rule: <b>if precisionMode is "significant digits" or if scalingMode is "logarithmic" the value range must be strictly greater than zero</b>. The slider will misbehave (but usually not crash) if this rule is broken. However, the problem is fatal (an infinite loop) if the value is zero and the scaling is in significant digits.</p>
+
+<p>Unless a Flash movie violates &ndash; or can potentially violate &ndash; the above rule there is no need to go back and update the slider. This update merely prevents violations of the rule from making the flash movie unresponsive, and potentially causing the authoring environment to crash. Therefore, I recommend using this version in new movies, and being careful about adjusting the slider parameters when working with old movies.
+

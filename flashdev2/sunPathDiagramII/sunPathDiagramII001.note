@@ -1,0 +1,16 @@
+Required flashvars parameters that this component looks for:</p>
+
+<ul>
+<li>dec - declination of the sun</li>
+<li>lat - latitude of the observer, -90 to 90</li>
+</ul>
+
+<p>Optional flashvars parameters:</p>
+
+<ul>
+<li>period - period of the animation in seconds; default is 7; set period to 0 to turn the animation off</li>
+<li>viewerAz - initial azimuth of the viewing perspective, default is 205</li>
+<li>viewerAlt - initial altitude of the viewing perspective, default is 45; this number should be greater than 7&deg;</li>
+</ul>
+
+<p>

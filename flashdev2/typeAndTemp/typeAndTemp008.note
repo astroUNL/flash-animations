@@ -1,0 +1,1 @@
+<code>getLuminosityFromTempAndMv</code> works now. <code>getColorFromTemp</code> now uses polynomials to calculate the color instead of using a lookup table.

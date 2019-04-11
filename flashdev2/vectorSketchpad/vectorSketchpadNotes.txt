@@ -1,0 +1,51 @@
+viewOnly - if "true" the user will not be able to create vectors (default is "false")
+
+showPanel - if "false" the details panel will not be shown (default is "true")
+
+gridSpacing - sets the spacing of the grid in pixels (minimum is 5px; default is "50")
+
+gridOriginX and gridOriginY - these two parameters define where the origin of the grid is located with respect to the bottom left corner of the movie; the positions can be given in pixels, or in grid units (ie. multiples of gridSpacing) by appending a "u" to the value (e.g. "gridOriginX=1.5u"); note that positive y values go up; defaults are +0.5 grid units for both
+
+gridThickness - sets the thickness of the grid lines (default is 2px)
+
+gridColor - specifies the color of the grid lines, the value should be given in hexadecimal (default is "E3E3FF")
+
+gridOriginThickness - sets the thickness of the grid lines that go through the origin (default is 3px)
+
+gridOriginColor - specifies the color of the grid lines that go through the origin, the value should be given in hexadecimal (default is "a0a0FF")
+
+You can add vectors using the following parameters appended with the vector number (where the numbering must start at 1 and be consecutive):
+
+tailX
+tailY
+
+headX
+headY
+
+xComp
+yComp
+
+mag
+angle
+
+color
+draggable
+selectable
+sAlpha
+uAlpha
+
+One of the tail or head points must be well defined. If both are defined then they are used to create the vector. If only one exists then the program looks for the x and y components to create the vector. Failing that, the program looks for the magnitude and the ccw x-axis angle.
+
+The positions, components, and magnitude can be specified in pixels or grid units. To use grid units append a lowercase "u" to the value, e.g. "tailX=3u". Absent a "u" pixels are assumed. For the head and tail positions pixel coordinates are measured from the bottom left corner where positive values go up and to the right. Grid coordinates are measured from the origin, whose location is specified by the gridOriginX and gridOriginY parameters.
+
+The angle can be specified in radians by appending an "r" to the value.
+
+color, draggable, selectable, sAlpha, and uAlpha are optional parameters - the defaults for flashvars specified vectors are
+
+color - "ff0000"
+draggable - "false"
+selectable - "false"
+sAlpha (selected alpha) - "100"
+uAlpha (unselected alpha) - "100" (for user created vectors it is "40")
+
+In this version of the vector sketchpad the selected vector is indicated by its alpha (by default the selected vector will be a stronger color). That is what the sAlpha and uAlpha parameters adjust. Since the default is for flashvars created vectors not to be selected the unselected alpha for these vectors is set at 100% so the specified color will match what is seen on the screen.

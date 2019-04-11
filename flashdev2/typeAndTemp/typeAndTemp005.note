@@ -1,0 +1,3 @@
+Now the function <code>getTempFromSpectralType</code> will accept a number (between 0 and 70) as the argument. If a number is passed the luminosity class can be specified as a second parameter, e.g. <code>getTempFromSpectralType(42, "V")</code> returns 5830.
+<br><br>
+Furthermore, the object returned by the <code>getSpectralTypeFromTemp</code> function &ndash; which has <code>type</code>, <code>number</code>, and <code>class</code> properties &ndash; now adds another property, <code>spectralTypeNumber</code>, which is a number between 0 and 70 that corresponds to the spectral type.

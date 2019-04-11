@@ -1,0 +1,1 @@
+Made the time slider range dynamic (it still won't go past 100 Gy, a limit that's needed to keep the integration lookup table from growing excessively large).

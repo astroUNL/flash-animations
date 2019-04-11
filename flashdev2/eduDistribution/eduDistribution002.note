@@ -1,0 +1,4 @@
+Added a maxwell distribution option (input preset number 7). Note that specifying a maxwell input distribution with a filter distribution will not produce a combined distribution.
+</p>
+<p>
+<a href="eduDistribution/distributionViewer2.html">distributionViewer2</a> (<a href="eduDistribution/distributionViewer2.fla">source</a>)

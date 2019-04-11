@@ -1,0 +1,107 @@
+Documentation for the component:
+</p>
+
+<p>
+<b>Methods</b>
+</p>
+
+<ul>
+<li><code>addPlanet(name, defObj, linkageName)</code> - This function adds a planet movieclip to the component. <code>name</code> should be a valid actionscript identifier since it will be the name given to the movieclip. Properties of the <code>defObj</code> will be defined on the newly attached movielip (it is used as the initObject). See the section on defining planet locations below, as well as the section on the default planet movieclip, to see what properties this object should have. <code>linkageName</code> is an optional argument to specify which movieclip to use for the planet disc. If left undefined the default, "EC Planet Disc", will be used.</li>
+<li><code>addAngle(name, defObj, linkageName)</code> - This function adds an angle movieclip to the component. <code>name</code> should be a valid actionscript identifier since it will be the name given to the movieclip. Properties of the <code>defObj</code> will be defined on the newly attached movielip (it is used as the initObject). See the section on defining angles below, as well as the section on the default angle movieclip to see what properties this object should have. <code>linkageName</code> is an optional argument to specify which movieclip to use for the angle. If left undefined the default, "EC Angle", will be used.</li>
+<li><code>update()</code> - Call this function after making changes.</li>
+<li><code>reset()</code> - This function removes all planet and angle movieclips.</li>
+<li><code>setOrbitRadii(r1, r2)</code> - Sets the orbit radii (it does not matter in which order they are given). There is no need to call an update function after calling this function. The defaults are 75 and 150.</li>
+<li><code>getGreatestElongation()</code> - This function returns the greatest elongation, in degrees, possible for the given configuration. This value depends on the relative sizes of the orbits. Note that this function always assumes the inferior planet configuration, even when in superior planet mode (since greatest elongation has no meaning in that case).</li>
+<li><code>addSun(linkageName)</code> - Call this if you want to use a different sun icon. The default linkageName is "EC Sun Disc".</li>
+</ul>
+
+<p>
+<b>Properties</b>
+</p>
+
+<ul>
+<li><code>mode</code> - This property determines whether the observed planet is inferior or superior to the observer's planet. The value should be "inferior" or "superior". The default is "inferior".</li>
+<li><code>orbitThickness, orbitColor, orbitAlpha</code> - The orbit style. Defaults are 2, 0x505050, and 100. Call </code>updateOrbits</code> after changing these properties.</li>
+<li><code>minOrbitSeparation</code> - The minimum difference between inner and outer orbits, as well as the minimum size of the inner orbit. The default is 20.</li>
+</ul>
+
+<p>
+<b>Defining a Planet Location</b>
+</p>
+
+<p>
+The properties that can be used to define the planet's location are <code>type</code>, <code>pAngle</code>, <code>eAngle</code>, <code>eString</code>, <code>wrt</code>, and <code>useFarSide</code>. The following describes their use.
+</p>
+
+<p>
+There are two types of planets: observer and observed. By default planets are assumed to be observed planets, so you will have to set <code>type</code> to "observer" if it is supposed to be an observer's planet.
+</p>
+
+<p>
+There are essentially two ways that the location of the planet can be specified: either by the position angle (the angle with the sun at the vertex) or the elongation angle (the angle with the observer planet at the vertex). Defining by position angle is simplest and can be accomplished with the <code>pAngle</code> property, which specifies planet's position in degrees CCW from the +x axis (or degrees CCW from another object, see the comments for the <code>wrt</code> property below).
+</p>
+
+<p>
+For elongation the <code>eAngle</code> property is used. This should be in degrees, where eastern elongations are positive and western elongations are negative. Alternately, elongation configurations can be defined descriptively with a string, <code>eString</code>. This string can be the full description or an abbreviation (e.g. "western greatest elongation" or "wge").
+</p>
+
+<p>
+The <code>wrt</code> ("with respect to") property specifies which other planet the position is relative to. For planets defined by the position angle this property is optional, but for planets defined by an elongation angle or elongation description there must always be another planet (even if only implied). In the elongation cases the <code>wrt</code> planet must be of the opposite type. Note that when a planet has an elongation definition but lacks the <code>wrt</code> property the component uses the first object it finds of the opposite type, so in cases where there is only one such object it can be OK to leave the property undefined. Still, be aware of the ordering issue (see the ordering section below).
+</p>
+
+<p>
+When in the inferior planet mode if an elongation is greater than the greatest elongation the component will reduce it down to the greatest elongation. For elongation angles less than the greatest elongation there are two points on the orbit that can have that value, so the component will assume the near position unless the <code>useFarSide</code> property is true. 
+</p>
+
+<p>
+<b>Comment on the Order in which Planets are Added</b>
+</p>
+
+<p>
+The order planets are added is important since the component will process them sequentially. Planet positions defined by elongation need to be defined with respect to a planet of the opposite type whose position is defined by position angle. Therefore the first planet added to the component needs to be defined by position angle and not with respect to any other planet.
+</p>
+
+<p>
+<b>Defining an Angle</b>
+</p>
+
+<p>
+An angle needs to have <code>planet1</code> and <code>planet2</code> properties, which are the names of the objects the elongation angle is to be drawn for. Naturally one of these objects should be an observer planet and the other an observed planet, although it does not matter which is assigned to <code>planet1</code> or <code>planet2</code>.
+</p>
+
+<p>
+<b>Default Angle Movieclip Options</b>
+</p>
+
+<p>
+The following properties can be set via the <code>defObj</code> when adding the angle movieclip. Call the <code>update</code> function on the angle movieclip if any of these properties have changed after it has been attached. 
+</p>
+
+<ul>
+<li><code>lineMargin</code> - This the number of pixels beyond the outer orbit that the lines should extend. The default is 30.</li>
+<li><code>lineThickness, lineColor, lineAlpha</code> - These control the style for the lines, arcs and arrowheads. The defaults are 2, 0xffc050, and 100.</li>
+<li><code>labelColor</code> - The color for the elongation angle text. The default is 0xffc050.</li>
+<li><code>labelBackgroundColor, labelBackgroundAlpha</code> - These specify the color and transparency of the fill behind the angle text. The defaults are 0x000000 and 60.</li>
+<li><code>labelDistance</code> - This is the extra distance from the arc where the label is placed. The default is 12.</li>
+<li><code>arcRadius</code> - This is the radius of the arc. The default is 30.</li>
+</ul>
+
+<p>
+<b>Default Planet Movieclip Options</b>
+</p>
+
+<p>
+The following properties can be set via the <code>defObj</code> when adding the planet movieclip. Call the <code>update</code> function on the planet movieclip if any of these properties have changed after it has been attached. 
+</p>
+
+<ul>
+<li><code>label</code> - The text for the label. The default is undefined.</li>
+<li><code>labelAngle</code> - If this property is defined then the label will always be placed at the given angle, which is measured in degrees CCW from right. The default is undefined.</li>
+<li><code>labelDistance</code> - The position of the label from the disc center. The default is 20.</li>
+<li><code>discRadius</code> - The radius of the planet disc. The default is 8.</li>
+<li><code>outlineThickness, outlineColor, outlineAlpha</code> - These control the disc outline style. The defaults are 1, 0x909090, and 0.</li>
+<li><code>discColor</code> - If this is defined the disc will be this color. If the property is undefined then the disc will have color 0x9090ff (blue) when the disc is for an observer planet and 0x909090 (gray) for an observed planet. The default is undefined.</li>
+<li><code>labelColor</code> - The label color. The default is 0xffffff.</li>
+</ul>
+
+<p>

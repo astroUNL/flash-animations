@@ -1,0 +1,7 @@
+Updated the simulator to appear consistent with our more recent simulators. For the most part the behavior is identical to the previous version. Two differences are:
+</p>
+<ul>
+<li>the stickfigure on the globe is visible whether or not the horizon diagram is visible</li>
+<li>the panel contents are visible by default</li>
+</ul>
+<p>

@@ -1,0 +1,76 @@
+notes:
+
+<br><br>
+
+<code>amplitude, wavelength, offset</code> - These properties determine the shape of the curve. Values are in pixels.
+
+<br><br>
+
+<code>width, height</code> - These properties set the dimensions of the plot area.
+
+<br><br>
+
+<code>addLabel(linkageName, name, position, initObj, depth)</code> - This function adds a label (movieclip) to the curve. If the linkage name is <code>null</code> or <code>undefined</code> the "SCII Default Label" found in the resources folder is used. <code>name</code> should be a valid actionscript identifier since it will be used to provide a reference to the movieclip. The position is the x-coordinate of the label. The optional argument <code>initObj</code> will be used when attaching the label movieclip. The last argument, <code>depth</code>, is also optional.
+
+<br><br>
+
+The "SCII Default Label" movieclip has the following properties:
+
+</p>
+
+
+<ul>
+<li><code>labelColor</code> - the color of the label (both the text and dot)</li>
+<li><code>text</code> -  the text to place next to the label</li>
+<li><code>textAngle</code> -  in degrees, clockwise from up, default is 0</li>
+<li><code>textRadius</code> -  approximate distance, in pixels, between the text and the dot, default is 7</li>
+<li><code>textSize</code> -  point size of text font, default is whatever the text size is in the embedded font field</li>
+<li><code>dotRadius</code> -  radius of dot, in pixels, default is 3</li>
+</ul>
+
+<p>
+
+These properties can be set by defining them on an <code>initObject</code> and passing it to <code>addLabel</code>. Afterwards, they can be set on directly on the the movieclip instance. Call <code>update</code> on the label movieclip after changing these properties.
+
+<br><br>
+
+<code>setLabelPosition(name, position)</code> - Sets the position (x-coordinate in pixels) of a label.
+
+<br><br>
+
+<code>removeLabel(name)</code> - Removes the label.
+
+<br><br>
+
+<code>showVerticalAxis,showHorizontalAxis</code> - Properties toggle visibility of the axes.
+
+<br><br>
+
+<code>setAxisStyle(thickness, color, alpha)</code> - Sets the linestyle of the axes. Use <code>null</code> to leave a parameter unchanged.
+
+<br><br>
+
+<code>setCurveStyle(thickness, color, alpha)</code> - Sets the linestyle of the sine curve. Use <code>null</code> to leave a parameter unchanged.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

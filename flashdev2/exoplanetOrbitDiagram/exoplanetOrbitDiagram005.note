@@ -1,0 +1,22 @@
+The native size of the swf is 300×300. The following flashvars are accepted:
+</p>
+
+<ul>
+<li><code>starOrbitRadius</code> - in pixels, default is 18; the planet's orbital radius is fixed at 94</li>
+<li><code>showPlanet</code> - can be 'T' or 'F' (or '1' or '0'), default is 'T'</li>
+<li><code>showStar</code> - can be 'T' or 'F' (or '1' or '0'), default is 'T'</li>
+<li><code>planetAngle</code> - in degrees counterclockwise from right (assuming that the view from earth is from the left), default is 180, but see note below</li>
+<li><code>starAngle</code> - in degrees counterclockwise from right (assuming that the view from earth is from the left), default is 0, but see note below</li>
+<li><code>earthArrowAngle</code> - in degrees counterclockwise from left, default is 0, changing this value causes the planetAngle and starAngle to change correspondingly (so they are effectively independent of this setting)</li>
+<li><code>showDirectionArrows</code> - can be 'T' or 'F' (or '1' or '0'), default is 'T'</li>
+<li><code>orbitDirection</code> - can be 'cw' or 'ccw', default is 'cw'
+<li><code>starOrbitDirection, planetOrbitDirection</code> - both of these must be set for either to have an effect; these properties override the orbitDirection property</li>
+</ul>
+
+<p>
+Note regarding the planet and star angles: if only one of these properties is defined the other will be assigned so that the bodies are on the opposite sides of the center of mass (the physically correct situation). The only reason for defining both properties is if you want to model a physically incorrect situation.
+
+
+
+
+

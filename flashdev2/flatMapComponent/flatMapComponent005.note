@@ -1,0 +1,29 @@
+methods:</p>
+
+<ul>
+<li><code>addLine(defObj)</code> - adds a latitude and/or longitude line to the map; valid properties for defObj are lat and lon, as well as the optional style properties thickness, color, and alpha</li>
+<li><code>removeAllLines()</code> - removes all lines created with addLine</li>
+<li><code>addObject(linkageName, name, posObj, initObj)</code> - adds an object (that is, a movieclip) to the map; linkageName specifies the movieclip to attach, name identifies the object, posObj gives the location (defined by lat and lon properties), and initObj is an optional argument used when attaching the movieclip</li>
+<li><code>setObjectPosition(name, posObj)</code> - repositions an attached object; posObj should have lat and lon properties defined</li>
+<li><code>passDataToObject(name, dataObj)</code> - since objects can wrap around the edge of the map the component attaches several copies of the object; this means that if you want to communicate with an object you actually need to communicate with several movieclip instances; this function accomplishes that task by calling the function receiveData on each movieclip instance with dataObj as the argument (so you'll need to define a receiveData function on your objects)</li>
+<li><code>removeObject(name)</code> - removes the attached object with that name</li>
+<li><code>removeAllObjects()</code>- removes all objects attached with addObject</li>
+</ul>
+
+<p>properties:</p>
+
+<ul>
+<li><code>numberOfLatitudeDivisions, numberOfLongitudeDivisions</code> - these set how many horizontal and vertical divisions to use for the border and grid; call updateGrid and updateBorderAndLabels after changing</li>
+<li><code>borderWidth, borderLightColor, borderDarkColor, borderLabelMargin</code> - these properties control the appearance of the border; call updateBorderAndLabels after changing</li>
+<li><code>useKiribatiIDL</code> - this property specifies whether to use the international date line with the relatively new Kiribati borders; call updateIDL after changing</li>
+<li><code>IDLLineThickness, IDLLineColor, IDLLineAlpha</code> - these are the style properties for the international date line; call updateIDL after changing these properties</li>
+<li><code>gridThickness, gridColor, gridAlpha</code> - these are the style properties for the latitude and longitude grid lines; call updateGrid after changing these properties</li>
+<li><code>defaultLineThickness, defaultLineColor, defaultLineAlpha</code> - these are the default style properties to use for lines created with addLine</li>
+<li><code>showLongitudeGrid</code> - shows or hides the lines of longitude</li>
+<li><code>showLatitudeGrid</code> - shows or hides the lines of latitude</li>
+<li><code>showIDL</code> - shows or hides the international date line</li>
+<li><code>showBorderLabels</code> - shows or hides the labels around the border</li>
+<li><code>longitudeOffset</code> - the longitude of the map along the left edge</li>
+<li><code>allowDragging</code> - specifies whether the map can be dragged to change the longitude offset; if onDragHandler is defined a function with that name will be called (on the parent of the component) when the the map is dragged</li>
+</ul>
+<p>

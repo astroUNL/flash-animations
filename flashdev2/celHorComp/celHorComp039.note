@@ -1,0 +1,1 @@
+Made two changes: (1) When the user enters +/- 90&deg; in the star's altitude field the azimuth does not change, (2) The direction labels in the horizon diagram switch to all 'N' or all 'S' at the poles.

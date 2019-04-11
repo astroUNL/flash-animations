@@ -1,0 +1,1 @@
+Added getTempFromLuminosity as an inverse to getLuminosityFromTempAndClass for main sequence stars. Also added getTempFromRadius, which returns the temperature associated with main sequence star of a given radius. Also added getLuminosityFromMass, which returns the luminosity of a main sequence star given its mass.

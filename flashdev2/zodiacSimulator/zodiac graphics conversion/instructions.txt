@@ -1,0 +1,86 @@
+
+How to convert constellation artwork into the format required by the zodiac simulator
+-------------------------------------------------------------------------------------
+
+Overview: The zodiac simulator requires constellation artwork to consist of sequences of drawing commands with points defined in the three dimensional space where the celestial sphere has a radius of 1. This lets the simulator project the points efficiently onto the sky.
+
+To accomplish this, the illustrator artwork is reduced to simplified flash files (simplified in the sense that there are no unnecessary or overlapping parts). Then these flash files are converted to svg. Finally, these svg files are converted using a utility program into the format that the simulator needs.
+
+(1) - Creating the simplified flash files
+
+(1a) Create a new flash movie and import all the illustrator files into the library.
+(1b) Prepare each constellation graphic via the following steps:
+ (1bi) Make finishing touches to the artwork (e.g. if lines are being used as fills, turn them into fills).
+ (1bii) Select all (ctrl-a).
+ (1biii) Break apart (ctrl-b).
+ (1biv) Combine everthing (Modify->Combine Objects->Union).
+ (1bv) Break apart again (ctrl-b).
+
+[At this point every constellation graphic in the libary should consist of shapes in a single layer.]
+
+(1c) Make the simplified flash movies for each constellation via these steps:
+ (1ci) Create a new flash movie.
+ (1cii) Go back to the library clip of the artwork. Select all and copy (ctrl-a, ctrl-c). (You're copying the content -- the shapes, not the movieclip itself.)
+ (1ciii) Paste the artwork on the stage of the new flash file.
+ (1civ) Make flash player 6 the target platform (File->Publish Settings, Flash tab, and select Flash Player 6 as the Player).
+ (1cv) Save the new flash file as "simplified_XXX.fla", and publish the flash file (ignore any warnings about unsupported features).
+
+(2) Creating the svg files.
+
+[Note: the program being used to convert the flash movies into svg files is the command line version of Flash Exploit, by M-Gate Labs http://www.mgatelabs.com .]
+
+(2a) Upload the Flash Exploit java file (FECL.jar) into a directory on cse.
+(2b) Upload all the simplified flash files into this same directory.
+(2c) For each file, run the following command: java -jar FECL.jar -i simplified_XXX.swf -o simplified_XXX.svg
+
+(3) Turning the svg files into data.
+
+(3a) Create a new .as file in flash. Copy and paste the following three lines into the file:
+
+private var _constellationsData:Array = [
+
+];
+
+(3b) Save the new file as "constellationsData.as".
+(3c) Open the converter utility, and for each constellation take these steps:
+ (3ci) Open the svg file.
+ (3cii) Select the constellation name in the drop down menu.
+ (3ciii) Adjust the translation, rotation, and scale to make the artwork correspond to the reference.
+ (3civ) Click the "copy code to clipboard" button. This copies a flash object that contains all the data needed to draw this constellation.
+ (3cv) Go to the constellationsData.as file and paste the block of code within the array. For the last constellation object at the end of the array you will need to remove the trailing comma.
+
+[After taking these steps you should get something that looks like this:
+
+private var _constellationsData:Array = [
+{name:"Aquarius",....
+    ....lots of data defining this constellation
+    ....},
+{name:"Aries",....
+    ....lots of data defining this constellation
+    ....},
+....more constellations....
+{name:"Virgo",....
+    ....lots of data defining this constellation
+    ....}  // <- !!! comma has been removed !!!
+];
+
+IMPORTANT: You must remove the comma at the end of the last chunk of code you paste into the array. Also note that the actual order of constellation objects within the array does not matter.]
+
+(3b) Now copy the new constellationsData.as file to the zodiac simulator folder (save the old one as backup). Open the zodiacSimulator.fla file and republish. If there are errors switch back to the backup file to verify that the errors are due to the new file. If the problems are due to the new file make sure the commas are correct between the constellation objects. Remember, the _constellationsData list is an array (square brackets) of 12 very large flash objects (curly brackets).
+
+For reference, each constellation object consists of the following properties:
+name - name of the constellation
+ra, dec - right ascension and declination of the center of the constellation, in radians
+r - radius, or maximum extent, of the constellation from the center, in radians
+ops - an array of drawing operations; each operation is an object with some of these properties:
+  t - the type of the operation, the only property that every operation object has; these are the types:
+      0 - moveTo
+      1 - lineTo
+      2 - curveTo
+      3 - beginFill
+      4 - endFill
+      5 - lineStyle
+      6 - lineStyle(), ie. a lineStyle call with no arguments to clear the lineStyle
+  x, y, z - the cartesian coordinates of the point in the space where the celestial sphere is the unit sphere; used by moveTo, lineTo, and curveTo (as the anchor point)
+  cx, cy, cz - the cartesian coordinates of the control point for curveTo operations
+  c - the color (as an int) for the beginFill or lineStyle operations

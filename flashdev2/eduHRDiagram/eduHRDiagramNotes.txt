@@ -1,0 +1,61 @@
+
+regions
+	0*- no regions shown
+	1 - regions shown with labels
+	2 - regions shown without labels
+	3 - regions shown with letters instead of labels
+	4 - regions shown with numbers instead of labels
+
+radius
+	0*- no isoradius lines shown
+	1 - isoradius lines shown
+
+
+xAxis
+	0 - no x axis shown
+	1*- temperature shown on bottom
+	2 - spectral type shown on bottom
+	3 - temperature shown on bottom and spectral type shown at top
+
+
+yAxis
+	0 - no y axis shown
+	1*- luminosity shown at left
+
+
+main
+	0*- no main sequence shown
+	1 - main sequence line shown
+	2 - main sequence line shown with mass tickmarks
+
+hip
+	0*- no hipparchos population distribution shown
+	1 - hipparchos population distribution shown
+
+
+To add a star use the variables below with a number added to the end of the variable name. Numbering should start at 1 and be consecutive.
+
+If only one of the following variables is defined the star is assumed to be on the main sequence.
+
+mass
+lum
+temp
+rad
+type
+
+You can also use a pair of variables to specify the location of a star. Note that the combination must include both an x and y.
+
+temp	x
+type	x
+rad		xy
+lum		y
+
+Style options for the star's point:
+
+label - default is the number of the star
+showAsDisc -
+	0*- show as a point with the label to the upper right
+	1 - show as a larger disc with the label inside the disc
+color - default is ff0000 
+textColor - default is black when showAsDisc is 1; otherwise, it is the same as "color"
+

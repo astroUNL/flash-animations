@@ -1,0 +1,3 @@
+Improved the accuracy of the plot so that the solstices and equinoxes fall on the most likely dates: March 20, June 21, September 22, and December 21.
+</p><p>
+Also fixed it so that number of daylight hours reported when clicking on the equinox events will always be 12 (in earlier versions this wasn't working at latitudes of +-90°).

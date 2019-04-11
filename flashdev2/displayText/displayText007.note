@@ -1,0 +1,45 @@
+The function <code>displayText</code> is found in the first frame of the main timeline. Documentation:</p>
+<pre>
+	// This function takes a string and adds its text to screen. It allows a convenient way to display
+	// superscripts and subscripts in a line of text by using &lt;sup&gt;&lt;/sup&gt; and &lt;sub&gt;&lt;/sub&gt; tags.
+	
+	// More precisely, this function creates and positions textfields as needed in a wrapper movieclip it
+	// creates. A reference to this wrapper movieclip is returned by the function. The property textWidth
+	// is added to the wrapper movieclip and gives the total width of the line of text.
+	
+	// Arguments of the function:
+	// textString contains the text to display (the function returns null if this is not a string)
+	// options is an optional object with any of the following properties:
+	//   depth - depth to use for the wrapper movieclip containing the text; if no depth
+	//     is provided a depth of 913001 or greater is used (a global variable is used to
+	//     ensure that subsequent textfields don't overwrite each other)
+	//   mc - a reference to the movieclip in which to add the text wrapper movieclip; if
+	//     it is not provided the wrapper movieclip will be added to 'this'
+	//   name - the name to give the text wrapper movieclip; if it is not provided the name
+	//     will be the string "_textWrapper_" plus depth (e.g. "_textWrapper_913001")
+	//   x y - if x or y are provided the wrapper movieclip will be positioned at those coordinates;
+	//     otherwise the wrapper is placed at the origin
+	//   vAlign - this property determines how the text is arranged vertically with respect to the
+	//     wrapper movieclip's origin; it can be either "center" (default), "top", or "bottom"
+	//   hAlign - this property determines how the text is arranged horizontally with respect to the
+	//     wrapper movieclip's origin; it can be either "center" (default), "left", or "right"
+	//   embedFonts - if this is provided all the textfields will have their embedFonts property
+	//     set to this value; if this is set to true all the necessary characters of the font specified
+	//     in the textFormat parameter must be exported with the movie; the default is false
+	//   textFormat - the TextFormat object to use for the text; if it is not provided the default
+	//     format generated with createTextField is used (12pt Times); this style applies to both
+	//     the sub/superscript and normal textfields, with the exception that sub/superscripts are
+	//     rendered at a smaller font size determined by sizeRatio
+	//   sizeRatio - the ratio of the normal font size (which is specified in the textFormat parameter)
+	//     to the sub/superscript font size; the default is 1.5
+	//   subscriptPosition - this affects the positioning of the subscripts; the default is 0px;
+	//     negative values bring the subscripts closer to the center of the line, while positive
+	//     values push the subscripts away from the center (in pixel units)
+	//   superscriptPosition - this affects the positioning of the superscripts; the default is 0px;
+	//     negative values bring the superscripts closer to the center of the line, while positive
+	//     values push the superscripts away from the center (in pixel units)
+	//   extraSpacing - sometimes it seems that the gap between sub/superscript and normal
+	//     textfields is too narrow, so extraSpacing was introduced to put a little bit of
+	//     extra room between fields; the default is 0.5px
+</pre>
+<p>

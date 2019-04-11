@@ -1,0 +1,15 @@
+There are two functions demonstrated here:
+</p><p class="verNote">
+<code>Math.toScientific(<i>num, [sigDigs]</i>)</code> returns a string with <code>num</code> in scientific notation. <code>sigDigs</code> is an optional parameter to specify the number of significant digits (valid values are integers 1 through 15). If <code>sigDigs</code> isn't provided it defaults to 4. In the case of error the function returns an empty string. 
+</p><p class="verNote">
+<code>Math.toSigDigits(<i>num, sigDigs</i>)</code> returns <code>num</code> as a number with <code>sigDigs</code> significant digits, where <code>sigDigs</code> is an integer from 1 to 15. If there is an error it returns <code>NaN</code>. Since this returns a number displaying trailing zeros when converting to a string is a problem. For example:
+<br><br>
+<code>
+trace(String(Math.toSigDigits(560001, 4))); // traces 560000
+<br>
+// can't tell which zeros are significant and which are not 
+<br><br>
+trace(String(Math.toSigDigits(0.0005, 5))); // traces 0.0005
+<br>
+// implies that there is only one significant digit 
+</code>

@@ -1,0 +1,17 @@
+flashvars parameters:</p>
+<ul>
+<li>sunAngle: measured from meridian CCW about NCP axis</li>
+<li>moonAngle: same as sunAngle</li>
+<li>viewerAzimuth: azimuthal angle of viewer, measured from north CW about zenith axis</li>
+<li>viewerAltitude: altitude from horizon plane</li>
+<li>latitude: observer latitude</li>
+</ul>
+<p>notes:</p>
+<ul>
+<li>all angles are in degrees</li>
+<li>the sun and moon are always on the celestial equator</li>
+<li>only sunAngle and moonAngle are required, failure to supply legal values causes an error message to be displayed</li>
+<li>default viewing angles are determined by the sun and moon angles</li>
+<li>default latitude is 41&deg; N</li>
+</ul>
+<p>version 001 below lets you adjust the parameters using sliders

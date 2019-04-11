@@ -1,0 +1,17 @@
+Required flashvars parameters for this component</p>
+
+<ul>
+<li>lat - latitude of the observer</li>
+<li>az - direction of view</li>
+</ul>
+
+<p>Optional parameters:</p>
+
+<ul>
+<li>period - period of animation in seconds; default is 20</li>
+<li>initState - a string that determines the state of the animation at the start; it can be either "running" or "paused"; default is "paused"</li>
+<li>showZodiac - determines whether zodiac constellation outlines are drawn; it can be either "true" or "false"; default is "true"</li>
+</ul>
+
+<p>The natural size of this movie is 387 by 236.
+

@@ -1,0 +1,20 @@
+The function given here takes a number and returns it as a string with the specified number of digits. To use, copy the function <code>Number.prototype.toFixed()</code> and put it in the first frame of your movie, or inside any <code>#initclip/#endinitclip</code> pair. Then when you have a number <code>x</code> that you want in fixed format with <code>N</code> digits, use the following method:
+<br><br>
+<code>output = x.toFixed(N);</code>
+<br><br>
+Another example:
+<br><br>
+<code>
+var x = Math.sin(1);<br>
+trace(x); // traces 0.841470984807897<br>
+var str = x.toFixed(3);<br>
+trace(str); // traces 0.841
+</code>
+<br><br>
+The variable must be a number to access the function, so explicit conversion may be necessary:
+<br><br>
+<code>
+userString = "0.33443";<br>
+var x = Number(userString);<br>
+trace(x.toFixed(2)); // traces 0.33
+</code>

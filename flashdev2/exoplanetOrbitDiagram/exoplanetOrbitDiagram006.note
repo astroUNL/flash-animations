@@ -1,0 +1,5 @@
+Now labels can be added to positions on the star and planet orbits. This is done using the <code>starLabels</code> or the <code>planetLabels</code> flashvars. If either of these variables is used it should consist of a semicolon delimited list of label items, where each label item is a comma delimited list of (1) the label text and (2) the angle (where the angle is in degrees counter-clockwise from right if the earth is at left -- the same definition as for <code>planetAngle</code> and <code>starAngle</code>). For example, the demonstration page above uses the following flashvars line:
+</p>
+
+<p>
+<code>starLabels=A,0;B,90;C,180;D,240;E,320&showStar=f</code>

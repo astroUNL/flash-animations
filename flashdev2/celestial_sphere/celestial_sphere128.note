@@ -1,0 +1,45 @@
+Shaded band functions on the celestial sphere component:</p>
+
+<ul>
+<li><code>addShadedBand(frontName, backName, name, parameters, [surface, [hemisphere, [initObject]]])</code> - <code>name</code> defines the name the band will be known by to access it specifically; see the description of <code>setLinkageNames()</code> below for a description of the <code>frontName</code>, <code>backName</code>, <code>surface</code>, <code>hemisphere</code>, <code>initObject</code> properties; see <code>setParameters()</code> for a description of the <code>parameters</code> argument</li>
+<li><code>updateShadedBands()</code></li>
+<li><code>showShadedBands()</code></li>
+<li><code>hideShadedBands()</code></li>
+<li><code>removeShadedBands()</code></li>
+</ul>
+
+<p>Methods of a shaded band include:</p>
+
+<ul>
+<li><code>setParameters({dec1, dec2, [ra, tilt]})</code> - the <code>dec1</code> and <code>dec2</code> (or <code>alt1</code> and <code>alt2</code>) parameters determine the range of the band; the optional <code>ra</code> (or <code>az</code>) and <code>tilt</code> parameters can be used to define a band in any arbitrary orientation (see the circle documentation for an understanding of what these parameters mean, or see the celestial_sphere101 example)</li>
+<li><code>setLinkageNames(frontName, backName, [surface, [hemisphere, [initObject]]])</code> - <code>frontName</code> and <code>backName</code> are the linkage names of the clips in the library (these should be discs 200 pixels wide); the optional parameter <code>surface</code> can be the strings "inner" or "outer" and determines whether the band appears on the inner or outer surface of the sphere (default is outer); the optional parameter <code>hemisphere</code> can be the strings "below", "above", or "full" and determines whether the band appears below or above the horizon plane, or both (default is both); the <code>initObject</code> parameter can be an object whose parameters get passed to the front and back movieclips when they are attached</li>
+<li><code>setBorderStyle(thickness, [color, [alpha]])</code> - sets the linestyle of the border</li>
+<li><code>remove()</code> - removes the band</li>
+<li><code>update()</code> - updates the band</li>
+</ul>
+
+<p>Properties of a shaded band include:</p>
+
+<ul>
+<li><code>visible</code> - toggles the visibility of the band (no update required)</li>
+<li><code>showBorder</code> - toggles the visibility of the border of the band (no update required)</li>
+</ul>
+
+<p>Additional notes:</p>
+
+<p>When the front and back shaded movieclips are attached to the library they get three variables defined on them (in addition to any that are passed by an initObject):</p>
+
+<ul>
+<li><code>_sphere</code> - a reference to the sphere that the clips are a part of</li>
+<li><code>_shadedBand</code> - a reference to the specific shaded band that the instances belong to</li>
+<li><code>_side</code> - a string, "front" or "back", that tells the clip which side of the sphere it is part of</li>
+</ul>
+
+<p>The declination and altitude ranges don't require the tilt and ra (or az) parameters, but one situation that does is putting a band on the ecliptic. The following line defines a band that extends 10&deg; above and below the ecliptic:</p>
+
+<p><code>sphere.band.setParameters({dec1: -10, dec2: 10, ra: 0, tilt: 23.4});</code></p>
+
+
+<p>
+
+

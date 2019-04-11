@@ -1,0 +1,43 @@
+Here is all the code contained in the movie above:
+</p>
+
+<pre>
+
+MovieClip.prototype.drawDashedLine = function(startX, startY, endX, endY, dashLength, gapLength) {
+	// this function will draw a dashed line between the indicated endpoints; the given dash
+	// length and gap length will be approximated as closely as possible such that there is
+	// a complete dash touching both endpoints
+	var dx = endX-startX;
+	var dy = endY-startY;
+	var length = Math.sqrt(dx*dx+dy*dy);
+	var n = Math.round((length-dashLength)/(dashLength+gapLength));
+	var f = dashLength/(dashLength+gapLength);
+	var mx = dx/(n+f);
+	var my = dy/(n+f);
+	var lx = f*mx;
+	var ly = f*my;
+	for (var i=0; i<=n; i++) {
+		var x = startX + i*mx;
+		var y = startY + i*my;
+		this.moveTo(x, y);
+		this.lineTo(x+lx, y+ly);
+	}
+};
+
+var mc = this.createEmptyMovieClip("exampleMC", 1);
+
+mc.lineStyle(0, 0x000000);
+mc.drawDashedLine(70, 12, 169, 183, 4, 2);
+
+mc.lineStyle(0, 0xff0000);
+mc.drawDashedLine(169, 183, 392, 302, 3, 3);
+
+mc.lineStyle(0, 0x000000);
+mc.drawDashedLine(392, 302, 447, 110, 2, 6);
+
+mc.lineStyle(0, 0x0000ff);
+mc.drawDashedLine(447, 110, 70, 12, 12, 12);
+
+</pre>
+
+<p>

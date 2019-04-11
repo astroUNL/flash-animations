@@ -1,0 +1,7 @@
+Now the planet and star discs will be drawn if no labels are added. In this case a red cursor dot will appear on the radial velocity curve and the following flashvars will be parsed:
+
+<ul>
+<li><code>animate</code> - boolean to have the diagram animate (default is false)</li>
+<li><code>period</code> - the period of the animation in seconds (defaut is 5)</li>
+<li><code>starAngle</code> - specifies the position of the star in degrees ccw from right (with the earth at left); default is 0 (note that there is no <code>planetAngle</code> flashvar in this component)</li>
+</ul>

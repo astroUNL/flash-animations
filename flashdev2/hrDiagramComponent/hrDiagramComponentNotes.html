@@ -1,0 +1,468 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"> 
+
+<html>
+<head>
+
+<title>HR Diagram Component</title>
+
+<meta http-equiv=Content-Type content="text/html;  charset=ISO-8859-1">
+
+<link rel="stylesheet" type="text/css" href="pageStyle.css">
+
+</head>
+<body>
+
+<!-- BEGIN PAGE BLOCK -->
+<div class="pageBlock">
+
+<h2>HR Diagram Component</h2>
+
+<br><br>
+<h3>Properties and Methods</h3>
+
+<!-- BEGIN INDENTED BLOCK -->
+<div class="indentedBlock">
+
+	<br>
+	<h4>diagramMC.addObject(linkageName, name, depth, layerName, initObj)</h4>
+	<div class="indentedBlock">
+	<p>
+This function adds a movieclip (ie. a star) to the HR Diagram. The arguments:
+	</p>
+	<ul>
+<li><code>linkageName</code> is the library name of the movieclip to attach &ndash; if it is <code>null</code> then <code>"HR Diagram Dot"</code> is used. There is another movieclip, <code>"HR Diagram Disc"</code>, available in the component's resources folder, and of course you can make your own. See the section on the object movieclip options at the bottom of this page.</li>
+<li><code>name</code> is the unique identifier for the object. After the object is attached you can access the movieclip with the reference to <code>diagramMC.name</code>. Use <code>null</code> if you don't need to access the movieclip.</li>
+<li><code>depth</code> is the depth of the object's movieclip. Use <code>null</code> if you don't care what depth the movieclip is attached at.</li>
+<li>If defined, <code>layerName</code> should be the name of a layer that has already been created with <code>addObjectLayer</code>. Use <code>null</code> if you don't want the object to be added to an objects layer.</li>
+<li><code>initObject</code> is an optional parameter that can be used to pass properties to the newly attached object, such as the object's position or style properties for the movieclip.</li>
+	</ul>
+	<p>
+Note that an object will not move up and down in response to <code>distanceModulus</code> unless it is added to a layer whose <code>keepFixed</code> property is <code>false</code>.
+	</p>
+	<p>
+An object's position in the HR diagram is defined by an x-coordinate property and a y-coordinate property. Acceptable x-coordinate properties are <code>temp</code>, <code>logTemp</code>, <code>type</code>, and <code>BV</code>. Here <code>type</code> is assumed to be the spectral type expressed as a number &ndash; use <code>getSpectralTypeNumber</code> (see below) to convert a standard spectral type string to a number. Acceptable y-coordinate properties are <code>lum</code>, <code>logLum</code>, <code>absBolMag</code>, <code>absVisMag</code>, <code>appBolMag</code>, and <code>appVisMag</code>. Note that <code>logTemp</code> and <code>logLum</code> are automatically calculated when the <code>temp</code> and <code>lum</code> properties change (but not the other way around).
+	</p>
+	<p>
+When <code>updateObjects</code> is called it first looks for the properties on the object that are the same as those that define the axis scale. If these properties are not found on the object then the function looks for other properties to convert. For example, if the x-axis is spectral type but only <code>temp</code> (and <code>logTemp</code>) are defined on the object, <code>type</code> is calculated using a conversion function.
+	</p>
+	<p>
+Call <code>update</code> or <code>updateObjects</code> after adding objects. The following example adds the sun to the HR Diagram using the default dot:
+	</p>
+	<pre>
+// define the sun's position and the style for the dot on the
+// init object (the sun's position could be defined multiple ways)
+var initObj = {};
+initObj.type = 42;
+initObj.absVisMag = 4.75;
+initObj.dotSize = 6;
+initObj.dotColor = 0xffcc00;
+initObj.outlineAlpha = 100;
+initObj.outlineColor = 0xa0a0a0;
+diagramMC.addObject(null, "sun", null, null, initObj);
+diagramMC.updateObjects();
+	</pre>
+	</div>
+
+	<br>
+	<h4>diagramMC.updateObjects(subset)</h4>
+	<div class="indentedBlock">
+	<p>
+This function positions objects and should be called after adding objects or changing their definitions. The optional <code>subset</code> parameter can be used to have the component update just a limited subset of the objects. To update all objects on a layer <code>subset</code> should be the layer's name. To update a single object <code>subset</code> should be the object's name. To update a list of objects <code>subset</code> should be an array of object names.
+	</p>
+	<p>
+Obscure problem warning: if the object you want to update belongs to a layer whose <code>keepFixed</code> property is <code>false</code> you need to update the entire layer (by name, not by list) or all objects &ndash; do not update just that object.
+	</p>
+	</div>
+
+	<br>
+	<h4>diagramMC.removeObject(name)</h4>
+	<div class="indentedBlock">
+	<p>
+This function removes the object with the given name. No update is required after calling it. Consider also <code>removeObjectLayer</code> and <code>removeAllObjects</code>.
+	</p>
+	</div>	
+
+	<br>
+	<h4>diagramMC.removeAllObjects()</h4>
+	<div class="indentedBlock">
+	<p>
+This function removes all objects and object layers. No update is required after calling it.
+	</p>
+	</div>	
+
+	<br>
+	<h4>diagramMC.plotStars(groupName, linkageName, initObj)</h4>
+	<div class="indentedBlock">
+	<p>
+This function adds a group of stars from one of several built-in lists. The list used is specified by <code>groupName</code>, which can take one of the following four values:
+	</p>
+	<ul>
+<li><code>"brightStars"</code> - This group consists of the 150 brightest stars (in apparent magnitude) minus the 5 that would also be in the nearby star list (also, one star was removed for being a nova). So this group consists of 144 stars.</li>
+<li><code>"nearbyStars"</code> - This group contains the stars from the 100 nearest stellar systems. Sub-stellar objects and white dwarfs are not included in the list, and 5 stars that would in this group have been removed since they would also be in the bright star group. This group has 119 stars.</li>
+<li><code>"brightAndNearbyStars"</code> - This group consists of the 5 stars that would be in both the bright star and nearby star groups.</li>
+<li><code>"nearbyWhiteDwarfs"</code> - This group consists of the 8 white dwarfs that are found in the 100 nearest systems.</li>
+	</ul>
+	<p>
+The stars are added to a newly created layer with the same name as <code>groupName</code>. If <code>linkageName</code> is left undefined or is <code>null</code> the stars use the <code>"HR Diagram Dot"</code> movieclip. The <code>initObj</code> contains properties to pass to the stars' movieclips when they are attached. If no <code>initObj</code> is provided the default styles are blue for the bright stars (0x6060ff), green for the nearby stars (0x409040), red for the bright and nearby stars (0xff0000), and black for the white dwarfs (0x000000).
+	</p>
+	<p>
+A call to <code>updateObjects</code> or <code>update</code> is necessary after calling <code>plotStars</code>. Example code:
+	</p>
+	<pre>
+// adding the stars (using custom appearance for the white dwarfs) 
+diagramMC.plotStars("brightStars");
+diagramMC.plotStars("nearbyStars");
+diagramMC.plotStars("brightAndNearbyStars");
+diagramMC.plotStars("nearbyWhiteDwarfs", null, {dotSize: 3, dotColor: 0x8080ff});
+
+// position and show the objects
+diagramMC.updateObjects();
+
+// toggling the visibility of a group
+diagramMC.nearbyWhiteDwarfs._visible = false;
+
+// removing a group
+diagramMC.removeObjectLayer("brightStars");
+	</pre>
+	</div>
+
+	<br>
+	<h4>diagramMC.addObjectLayer(layerName, keepFixed, depth, objectsList, linkageName)</h4>
+	<div class="indentedBlock">
+	<p>
+An objects layer makes it easy to add, remove, and toggle the visibility of a group of objects. An objects layer is also the best way to add stars that will move up and down when <code>distanceModulus</code> changes. The arguments:
+	</p>
+	<ul>
+<li><code>layerName</code> specifies the name of the layer, which allows it to be accessed and referred to.</li>
+<li><code>keepFixed</code> is an optional parameter which, if <code>false</code> (the default), allows stars added to this layer to move up and down when the <code>distanceModulus</code> property changes. Note that it makes sense for this property to be <code>false</code> only if the stars on the layer are defined by their apparent magnitudes.</li>
+<li><code>depth</code> is an optional parameter to specify the depth of the layer. Layer depths are distinct from object depths &ndash; objects added to a layer will appear behind objects not added to a layer as well as objects added to another layer with a higher depth. Use <code>null</code> to have the component determine the depth.</li>
+<li><code>objectsList</code> is an optional list of objects to add to this layer after it has been created. This list should consist of the <code>initObj</code> objects that you would pass for each star if you were using <code>addObject</code> function. It is not possible to give a name to or control the depth of objects added through this method.</li>
+<li><code>linkageName</code> is the name of the movieclip to use for the objects added from the <code>objectsList</code>. The default is <code>"HR Diagram Dot"</code>.
+	</ul>
+	<p>
+If you add objects through this method you will need to call <code>updateObjects</code> or <code>update</code> afterwards. Example code:
+	</p>
+	<pre>
+// a list of stars to add to the layer (if you wanted to set
+// style properties as well this is where you would do it)
+hyadesList = [	{appVisMag: 7.4, BV: 0.566},
+		{appVisMag: 7.39, BV: 0.56},
+		{appVisMag: 7.4, BV: 0.57}, etc.
+
+// create a layer and add the list of stars at the same time,
+// note that since keepFixed is false this layer will move
+// up and down when distanceModulus changes
+diagramMC.addObjectLayer("hyades", false, null, hyadesList);
+
+// call updateObjects since we've added objects
+diagramMC.updateObjects();
+
+// hide the layer
+diagramMC.hyades._visible = false;
+
+// remove the layer
+diagramMC.removeObjectLayer("hyades");
+	</pre>
+	</div>
+
+	<br>
+	<h4>diagramMC.removeObjectLayer(layerName)</h4>
+	<div class="indentedBlock">
+	<p>
+This function removes the layer and all objects on it. No update is required.
+	</p>
+	</div>	
+
+	<br>
+	<h4>diagramMC.distanceModulus</h4>
+	<div class="indentedBlock">
+	<p>
+This property shifts the apparent magnitude system up and down. This means that the apparent magnitude scales move, objects defined by apparent magnitudes move, and objects on a layer where <code>keepFixed</code> is <code>false</code> move. The distance modulus is defined as the difference between apparent and absolute magnitude scales: <i>m</i> - <i>M</i>. No update is required after changing this property if the only objects defined by apparent magnitude are on object layers. Otherwise you will need to call <code>updateObjects</code> or <code>update</code>.
+	</p>
+	</div>	
+
+	<br>
+	<h4>diagramMC.update()</h4>
+	<div class="indentedBlock">
+	<p>
+This universal update function updates every aspect of the HR Diagram. Since the component is somewhat CPU intensive you should usually call only the necessary minimum of the partial update functions, which are <code>updateObjects</code>, <code>updateScales</code>, <code>updateIsoradiusLines</code>, and <code>updateLuminosityClassLines</code>.
+	</p>
+	</div>
+
+	<br>
+	<h4>diagramMC.setXAxisType(type, min, max)</h4>
+	<div class="indentedBlock">
+	<p>
+This function sets the x-coordinate system of the diagram. Valid options for type are <code>"logTemp"</code>, <code>"type"</code>, and <code>"BV"</code>. The axis type specifies how object positions are calculated, not which scales are shown at the top and bottom of the plot (see <code>showScale</code> for that).
+	</p>
+	<p>
+The optional <code>min</code> and <code>max</code> properties can be used to specify the horizontal range. These values are expected to be in the units of the axis type. For reference, the default ranges used are [0, 70] for <code>"type"</code>, [-0.322, 2.160] for <code>"BV"</code>, and [3.359, 4.701] for <code>"logTemp"</code>.
+	</p>
+	<p>
+Call <code>update</code> after calling this function.
+	</p>
+	</div>
+
+	<br>
+	<h4>diagramMC.setYAxisType(type, min, max)</h4>
+	<div class="indentedBlock">
+	<p>
+This function sets the y-coordinate system of the diagram. Valid options for type are <code>"logLum"</code>, <code>"absBolMag"</code>, and <code>"absVisMag"</code>. The optional <code>min</code> and <code>max</code> properties can be used to define the vertical range. The default ranges are [-5, 6] for <code>"logLum"</code> and [-10.321, 17.309] for the magnitude scales. The axis type specifies how object positions are calculated, not which scales are shown at the left and right of the plot (see <code>showScale</code>). Call <code>update</code> after calling this function.
+	</p>
+	</div>
+
+	<br>
+	<h4>diagramMC.showScale(type, side)</h4>
+	<div class="indentedBlock">
+	<p>
+Use this function to set which scales appear along the sides of the plot. <code>side</code> can be one of <code>"top"</code>, <code>"bottom"</code>, <code>"left"</code>, or <code>"right"</code> depending on whether the scale type specified is a horizontal or vertical one. Horizontal scale types are <code>"logTemp"</code>, <code>"type"</code>, and <code>"BV"</code>, while vertical scale types are <code>"logLum"</code>, <code>"absBolMag"</code>, <code>"absVisMag"</code>, <code>"appBolMag"</code>, and <code>"appVisMag"</code>. If <code>type</code> is anything other than one of these options then no scale will be shown on the given side (assuming <code>side</code> is valid). Therefore you can use <code>null</code> for <code>type</code> if you want to remove a scale. Call <code>updateScales</code> or <code>update</code> after calling this function.
+	</p>
+	<p>
+	 See the notes at the bottom of this page to learn how to control the appearance of a scale.
+	</p>
+	</div>
+
+	<br>
+	<h4>diagramMC.updateScales()</h4>
+	<div class="indentedBlock">
+	<p>
+<code>updateScales</code> redraws the scales shown around the sides of the plot. Call it after calling the <code>showScale</code> function.
+	</p>
+	</div>
+
+	<br>
+	<h4>diagramMC.showIsoradiusLines</h4>
+	<div class="indentedBlock">
+	<p>
+This property toggles the visibility of the isoradius lines. The effect is immediate &ndash; no update is required.
+	</p>
+	</div>
+
+	<br>
+	<h4>diagramMC.isoradiusLinesList, diagramMC.isoradiusMin, diagramMC.isoradiusMax</h4>
+	<div class="indentedBlock">
+	<p>
+These properties control which isoradius lines appear, whether they are labelled, and what the labelled text is. If </code>isoradiusLinesList</code> does not exist then labelled isoradius lines are displayed for every power of ten of the radius within the range defined by <code>isoradiusMin</code> (default 0.0001) and <code>isoradiusMax</code> (default 1000). This is the default situation.
+	</p>
+	<p>
+However, if the <code>isoradiusLinesList</code> array exists then only those lines specified in it will be shown. Each entry in the array should be an object with a <code>radius</code> property. Additionally, you can use the optional properties <code>hideLabel</code> and <code>labelText</code> (which allow for the <code>sup</code>, <code>sub</code> and <code>sol</code> tags).
+	</p>
+	<p>
+ Call <code>updateIsoradiusLines</code> or <code>update</code> after changing any of these properties. An example:
+	</p>
+	<pre>
+diagramMC.isoradiusLinesList = [{radius: 0.1},
+                                {radius: 1, labelText: "1 R&lt;sol&gt;"},
+                                {radius: 10, hideLabel: true},
+                                {radius: 200, labelText: "2×10&lt;sup&gt;2&lt;/sup> R&lt;sol&gt;"}];
+diagramMC.updateIsoradiusLines();
+	</pre>
+	</div>
+
+	<br>
+	<h4>diagramMC.isoradiusCurvesColor, diagramMC.isoradiusCurvesAlpha, diagramMC.isoradiusCurvesLineThickness, diagramMC.isoradiusLabelMargin, diagramMC.isoradiusLabelBackgroundAlpha, diagramMC.isoradiusLabelTextFormat</h4>
+	<div class="indentedBlock">
+	<p>
+These are the properties that control the appearance of an isoradius line. <code>isoradiusCurvesColor</code> (default 0x669933) sets the color of the curves and labels, and <code>isoradiusCurvesAlpha</code> (default 100) sets the alpha of curves and labels. <code>isoradiusCurvesLineThickness</code> (default 1) sets the thickness of the curves.
+	</p>
+	<p> 
+<code>isoradiusLabelMargin</code> (default 5) controls how close the labels are to the edge of the plot. <code>isoradiusLabelBackgroundAlpha</code> (default 80) controls how opaque the fill behind the labels appears. Finally, <code>isoradiusLabelTextFormat</code> (the default is determined from the fonts movieclip in the resources folder) specifies the text format used for the labels.
+	<p>
+Call <code>updateIsoradiusLines</code> or <code>update</code> after changing these properties.
+	</p>
+	</div>
+
+	<br>
+	<h4>diagramMC.updateIsoradiusLines()</h4>
+	<div class="indentedBlock">
+	<p>
+Call this function to redraw the isoradius lines (needed after changing the <code>isoradiusLinesList</code>, for example).
+	</p>
+	</div>
+
+	<br>
+	<h4>diagramMC.setShownLuminosityClasses(arg)</h4>
+	<div class="indentedBlock">
+	<p>
+Use this function to select which luminosity classes are shown. Either <code>updateLuminosityClassLines</code> or <code>update</code> must be called to see the changes. How the argument is interpreted:
+	</p>
+	<ul>
+<li>If <code>arg</code> is <code>"all"</code> then all luminosity classes will be shown.</li>
+<li>If <code>arg</code> is one of the strings <code>"I"</code>, <code>"II"</code>, <code>"III"</code>, <code>"IV"</code>, or <code>"V"</code>, then the indicated luminosity class line will be shown (along with any lines that were already visible).</li>
+<li>If <code>arg</code> is an array of strings then only the indicated lines will be shown, e.g. <code>arg = ["V", "I"]</code> would show only the main sequence (V) and supergiant (I) classes, even if others were previously visible.</li>
+<li>Passing a value of <code>"none"</code> has the same effect as setting <code>showLuminosityClassLines</code> to <code>false</code> (but unlike doing that you will need to call an update function).</li>
+	</ul>
+	</div>
+
+	<br>
+	<h4>diagramMC.luminosityClassCurvesColor, diagramMC.luminosityClassCurvesLineThickness, diagramMC.luminosityClassCurvesAlpha</h4>
+	<div class="indentedBlock">
+	<p>
+These are the properties that control the appearance of the luminosity class lines. <code>luminosityClassCurvesColor</code> (default 0xff6666) sets their color, <code>luminosityClassCurvesLineThickness</code> (default 1) set the line thickness, and <code>luminosityClassCurvesAlpha</code> (default 100) sets the transparency. Call <code>updateLuminosityClassLines</code> or <code>update</code> after changing these properties.	</p>
+	</div>
+
+	<br>
+	<h4>diagramMC.showLuminosityClassLines</h4>
+	<div class="indentedBlock">
+	<p>
+This property toggles the visibility of all the luminosity classes at once. Even if set to <code>true</code> only those luminosity class lines chosen with <code>setShownLuminosityClass</code> will be shown. The change is immediate &ndash; no update required.
+	</p>
+	</div>
+
+	<br>
+	<h4>diagramMC.updateLuminosityClassLines()</h4>
+	<div class="indentedBlock">
+	<p>
+This function redraws the luminosity class lines.
+	</p>
+	</div>
+
+	<br>
+	<h4>diagramMC.getPlotCoordinates(screenPoint)</h4>
+	<div class="indentedBlock">
+	<p>
+This function returns an object with all of the x and y coordinate properties defined on it, as well as the bolometric correction. The argument <code>screenPoint</code> should be an object with <code>x</code> and <code>y</code> properties, which are the screen coordinates relative to the diagram's origin (lower left corner, with negative y values going up).
+	</p>
+	<p>
+Specifically, the returned object will have the following properties defined on it: <code>temp</code>, <code>logTemp</code>, <code>BV</code>, <code>type</code>, <code>BC</code>, <code>lum</code>, <code>logLum</code>, <code>absVisMag</code>, <code>absBolMag</code>, <code>appVisMag</code>, and <code>appBolMag</code>.
+	</p>
+	</div>
+
+	<br>
+	<h4>diagramMC.get<b>A</b>From<b>B</b>(value, [BC]), diagramMC.getBCFromLogTemp(logTemp)</h4>
+	<div class="indentedBlock">
+	<p>
+There are many conversion functions on the component that you may want to take advantage of. These functions take the form <code>get<b>A</b>From<b>B</b></code>, where <b>A</b> and <b>B</b> stand for the various properties that can be used for an axis. For horizontal axis conversions <b>A</b> and <b>B</b> can be any of "LogTemp", "BV", and "Type". For vertical axis conversions <b>A</b> and <b>B</b> can be any of "LogLum", "AbsBolMag", "AbsVisMag", "AppBolMag", and "AppVisMag". For conversions between bolometric and visual systems (e.g. <code>getLogLumFromAppVisMag</code>) the second argument is expected to be the bolometric correction, which can be calculated with the function <code>getBCFromLogTemp</code>. Note the capitalization in the strings.
+	</p>
+	</div>
+
+	<br>
+	<h4>diagramMC.getSpectralTypeNumber(typeStr)</h4>
+	<div class="indentedBlock">
+	<p>
+This function returns the spectral type number associated with a spectral type expressed as a string. For example, if <code>typeStr</code> is <code>"G2"</code> the function returns 42. This function is provided to assist in assigning the <code>type</code> property of objects, which the component assumes to be a number. See <code>getLogLumFromLogTempAndClass</code> below for an example.
+	</p>
+	</div>
+
+	<br>
+	<h4>diagramMC.getLogLumFromLogTempAndClass(logTemp, class)</h4>
+	<div class="indentedBlock">
+	<p>
+This function calculates the luminosity of a star given its temperature and luminosity class. <code>class</code> should be a number, not a string (e.g. 5 for class V). Here's an example showing how to plot a G7 main sequence star (also demonstrating the <code>getSpectralTypeNumber</code> function):
+	</p>
+	<pre>
+var type = diagramMC.getSpectralTypeNumber("G7");
+var logTemp = diagramMC.getLogTempFromType(type);
+var logLum = diagramMC.getLogLumFromLogTempAndClass(logTemp, 5);
+var initObj = {};
+initObj.logTemp = logTemp;
+initObj.logLum = logLum;
+diagramMC.addObject(null, null, null, null, initObj);
+	</pre>
+	</div>
+
+	<br>
+	<h4>diagramMC.setDimensions(width, height)</h4>
+	<div class="indentedBlock">
+	<p>
+Sets the dimensions of the plot window. Call <code>update</code> after changing.
+	</p>
+	</div>
+
+	<br>
+	<h4>diagramMC.backgroundColor, diagramMC.backgroundAlpha, diagramMC.borderAndScalesLineThickness, diagramMC.borderAndScalesColor, diagramMC.borderAndScalesAlpha</h4>
+	<div class="indentedBlock">
+	<p>
+These properties affect the appearance of the plot. <code>backgroundColor</code> (default 0xffffff) and <code>backgroundAlpha</code> (default 100) control the appearance of the plot area. <code>borderAndScalesColor</code> (default 0x000000) sets the color of the border and scales, while <code>borderAndScalesLineThickness</code> (default 1) and <code>borderAndScalesAlpha</code> (default 100) control line thickness and transparency of the border and scale tickmarks.	
+	</p>
+	</div>
+
+
+<br><br>
+<h3>Axis Scale Style Settings</h3>
+
+<p>
+The following sections explain how to control the appearance of the scales. Call <code>updateScales</code> or <code>update</code> after changing any of the properties described below.
+</p>
+<p>
+The text styles used for all scales are determined by <code>axisLabelTextFormat</code>, and <code>tickmarkLabelTextFormat</code>. The defaults for these formats are acquired from the fonts movieclip in the component's resources folder at initialization (assuming they have not been provided in an init object), but can be changed at any time after that. 
+</p>
+
+	<br>
+	<h4>Temperature Axis Settings</h4>
+	<div class="indentedBlock">
+	<p>
+The string used to label this axis is defined by <code>logTempAxisLabel</code>. The default is "Temperature (K)". The placement of the label is controlled by the <code>logTempAxisLabelSpacing</code> property, whose default is 25.
+	</p>
+	<p>
+The optional <code>logTempLabelsList</code> property can be used to specify what temperature values should have a tickmark and label. This array should be a list of a strings which are numbers (that is, they can be correctly converted to numbers by the <code>parseFloat</code> function).
+	</p>
+	</div>
+
+ 	<br>
+	<h4>B-V Axis Settings</h4>
+	<div class="indentedBlock">
+	<p>
+The string used to label this axis is defined by <code>BVAxisLabel</code>. The default is "B-V Color Index". The placement of the label is controlled by the <code>BVAxisLabelSpacing</code> property, whose default is 25.
+	</p>
+	<p>
+Several optional properties can be used to control the appearance of this axis. The property <code>BVLabelsList</code> can be used to specify which values should be labeled. This array should be a list of a strings which are numbers (that is, they can be correctly converted to numbers by the <code>parseFloat</code> function).
+	</p>
+	<p>
+The <code>BVMinorStep</code> specifies the spacing between tickmarks. The default is 0.1. The <code>BVMajorMultiple</code> property specifies which tickmarks are major tickmarks. The default is 5. Therefore, by default there are tickmarks at  ... -0.1, <b>0.0</b>, 0.1, 0.2, 0.3, 0.4, <b>0.50</b>, 0.6, ... where the ones in bold would be major tickmarks.
+	</p>
+	</div>
+
+ 	<br>
+	<h4>Spectral Type Axis Settings</h4>
+	<div class="indentedBlock">
+	<p>
+The string used to label this axis is defined by <code>typeAxisLabel</code>. The default is "Spectral Type". The placement of the label is controlled by the <code>typeAxisLabelSpacing</code> property, whose default is 22.
+	</p>
+	<p>
+<code>typeNumTickmarks</code> (default 1) is the the number of tickmarks to use for each lettered spectral type and can be any of the numbers 0 through 5, or 10. The <code>typeLabelSpacing</code> property (default 4) determines the spacing of the spectral type letters from the axis. The <code>typeTickmarkLengths</code> array (default [5, 3, 4]) controls the lengths of the various major and minor tickmarks depending on the the number of tickmarks shown. <code>typeShowLabels</code> determines whether labels are shown.
+	</p>
+	</div>
+
+ 	<br>
+	<h4>Vertical Axis Settings</h4>
+	<div class="indentedBlock">
+	<p>
+Each of the five types of vertical axis is controlled by properties of the form <code><b>type</b>AxisLabel</code>, <code><b>type</b>AxisLabelSpacing</code>, <code><b>type</b>LabelSpacing</code>, and <code><b>type</b>LabelMultiple</code>, where <code><b>type</b></code> is one of the following strings: "logLum", "absBolMag", "absVisMag", "appBolMag", and "appVisMag". The axis label is the label used for the axis, the axis label spacing controls how far this label is placed from the edge of the plot, the label spacing controls the placement of the tickmarks labels, and the label multiple controls which major tickmarks get labels. For the luminosity scale the defaults of the last three properties are 47, 10, and 1 (meaning that the axis label is 47 pixels from the edge of the plot, the axis labels are 10 pixels from the edge, and labels are shown for each power of ten tickmark). For the magnitude scales the defaults are 40, 10, and 2.
+	</p>
+	</div>
+
+<br><br>
+<h3>Object Movieclip Options</h3>
+
+<p>
+The following sections explain how to customize the appearance of the dot and disc object movieclips provided with the component.
+</p>
+
+	<br>
+	<h4>HR Diagram Dot</h4>
+	<div class="indentedBlock">
+	<p>
+The HR Diagram Dot (the default object movieclip) properties and defaults are: <code>dotColor</code> (0x808080), <code>dotAlpha</code> (100), <code>dotSize</code> (2), <code>outlineThickness</code> (0), <code>outlineColor</code> (0x606060), and <code>outlineAlpha</code> (0). These can all be set via the <code>initObj</code> when adding the object. If the properties change later call the <code>update</code> function on the dot movieclip.
+	</p>
+	</div>
+
+ 	<br>
+	<h4>HR Diagram Disc</h4>
+	<div class="indentedBlock">
+	<p>
+The HR Diagram Disc properties and defaults are: <code>labelText</code> (""), <code>labelColor</code> (0xffffff), <code>discColor</code> (0xff0000), <code>discAlpha</code> (100), <code>discRadius</code> (8), <code>outlineThickness</code> (0), <code>outlineColor</code> (0x909090), and <code>outlineAlpha</code> (0). These can all be set through the <code>initObj</code> when adding the object. If you change one of the properties later you will need to call an update function on the disc movieclip. Call <code>updateLabel</code> after changing the first two properties and <code>updateDisc</code> after changing any of the last six properties (or call <code>update</code> to call both of these functions).
+	</p>
+	</div>
+
+	<br><br>
+
+</div>
+<!-- END INDENTED BLOCK -->
+
+</div>
+<!-- END PAGE BLOCK -->
+
+</body>
+</html>

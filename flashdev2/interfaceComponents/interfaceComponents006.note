@@ -1,0 +1,1 @@
+Fixed an oversight were it was possible to open the about and help popups by tabs (no mouse) but not to close them.

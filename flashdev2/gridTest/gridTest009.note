@@ -1,0 +1,1 @@
+This version lets you sweep the time slider and keep lightcones, but the slider works only up to the latest time that has been animated. It is just not possible in flash 6 to integrate instantly (or even reasonably quickly) over the whole slider domain. In flash 9 it would be possible.

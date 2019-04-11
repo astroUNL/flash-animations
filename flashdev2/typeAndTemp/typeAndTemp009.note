@@ -1,0 +1,10 @@
+Added the following functions:
+<br><br>
+<code>getMvFromTempAndLuminosity</code>
+<br>
+<code>getLuminosityFromTempAndClass</code>
+<br>
+<code>getRadiusFromTempAndLuminosity</code>
+
+
+

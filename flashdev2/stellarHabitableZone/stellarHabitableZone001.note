@@ -1,0 +1,27 @@
+to do:
+<ul>
+<li><s>HR diagram</s></li>
+<li><s>flip eccentric orbits (periastron at right)</s></li>
+<li>distance readout on diagram (fade out?)</li>
+<li><s>star mass selector or slider</s></li>
+<li><s>planet distance slider</s></li>
+<li><s>time readout on timeline cursor</s></li>
+<li><s>vertical bar in hab plot mirroring cursor time</s></li>
+<li>justifiable pessimistic and optimistic settings</li>
+<li><s>star, planet histories below timeline</s></li>
+<li><s>animation feature</s></li>
+<li><s>mass, lum, temp readouts</s></li>
+<li>black hole, neutron star, white dwarfs representations in diagram</li>
+<li>improved planet artwork</li>
+<li>habitable zone label and arrow in diagram</li>
+<li>star data in single compressed binary</li>
+<li>proper layout</li>
+<li>loader, with feedback and fade-in</li>
+<li>full titlebar</li>
+<li>use scientific notation for planet and star properties</li>
+<li>pause animation on mouse interaction (planet drag, timeline interaction)</li>
+<li>[not reproducing consistently] bug: select 30Msol, sweep time cursor to end, alternate between 3My and end (is it due to changing x targets?)</li>
+<li><s>bug: uncheck show ref orbits, drag planet to right to zoom out, recheck, change assumptions while watching labels</s></li>
+<li><s>bug: drag planet to right for a bit, change assumptions</s></li>
+</ul>
+

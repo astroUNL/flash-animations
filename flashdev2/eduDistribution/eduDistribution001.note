@@ -1,0 +1,2 @@
+This file expects either <code>input</code> or <code>filter</code> (or both) to be defined. When both are defined the combined distribution is displayed.</p>
+<p>Use <a href="eduDistribution/distributionViewer.html">this file</a> (<a href="eduDistribution/distributionViewer.fla">source</a>) to edit or review the input and filter lists.

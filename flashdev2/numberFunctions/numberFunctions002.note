@@ -1,0 +1,1 @@
+Two important fixes to the toScientific function have been made. The first fix makes it so the function now accepts negative values. The second fix takes care of a potential rounding problem. Suppose the number is 9.999e6 and we want to show it with two significant digits. The previous version would return "10.0e6". This version returns "1.0e7".

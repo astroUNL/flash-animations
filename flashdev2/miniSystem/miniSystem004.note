@@ -1,0 +1,1 @@
+There's a significant change in how the sizing and scaling works. Now the orbital radii can be given in any units, and the actual size of the whole system is set by scaling the component in the authoring environment. (In the previous version the orbital radii had to be given in pixels, and scaling the component in the authoring environment had no effect.)

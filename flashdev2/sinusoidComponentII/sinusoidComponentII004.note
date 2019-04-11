@@ -1,0 +1,31 @@
+Slight changes have been made to the component: a change in how the size is set when attaching using attachMovie and the inclusion of more embedded characters for the default label.</p>
+
+<p>Besides these changes to the component this demonstration swf has been changed so that the appearance of the example sinusoid can be set using flashvars. The width and height of the component will adjust to the size of the stage (ie. the swf size specified in the embedding html block).</p>
+
+<p>All of the following flashvars are optional:</p>
+
+<ul>
+<li><code>amplitude</code> - in pixels, default is 60</li>
+<li><code>wavelength</code> - in pixels, default is 80</li>
+<li><code>offset</code> - in pixels, default is 0</li>
+<li><code>showAxis</code> - can be 'T' or 'F' (or '1' or '0'), default is 'T'</li>
+<li><code>curveThickness</code> - default is 1</li>
+<li><code>curveColor</code> - in hex (without '#' or '0x' in front), default is '999999'</li>
+<li><code>curveAlpha</code> - default is 100</li>
+<li><code>axisThickness</code> - default is 1</li>
+<li><code>axisColor</code> - in hex, default is 'cccccc'</li>
+<li><code>axisAlpha</code> - default is 100</li>
+</ul>
+
+<p>Labels are added at positions <code>pos<b>Z</b></code> where <code><b>Z</b></code> denotes the label number, running consecutively from 1. The position should be given in pixels. Each label can be customized with the following optional flashvars:</p>
+
+<ul>
+<li><code>color<b>Z</b></code> - in hex, default is 'd00000'</li>
+<li><code>text<b>Z</b></code> - default is no text</li>
+<li><code>textAngle<b>Z</b></code> - in degrees clockwise from up, default is 0</li>
+<li><code>textRadius<b>Z</b></code> - in pixels, default is 7</li>
+<li><code>textSize<b>Z</b></code> - in points, default is 12</li>
+<li><code>dotRadius<b>Z</b></code> - in pixels, default is 3</li>
+</ul>
+
+<p>

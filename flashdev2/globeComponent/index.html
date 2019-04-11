@@ -1,0 +1,188 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"> 
+
+<html>
+<head>
+
+<title>Globe Component v2</title>
+
+<meta http-equiv=Content-Type content="text/html;  charset=ISO-8859-1">
+
+<link rel="stylesheet" type="text/css" href="pageStyle.css">
+
+</head>
+<body>
+
+<!-- BEGIN PAGE BLOCK -->
+<div class="pageBlock">
+
+<h2>Globe Component v2</h2>
+
+<br><br>
+<h3>Methods</h3>
+
+<!-- BEGIN INDENTED BLOCK -->
+<div class="indentedBlock">
+
+	<br>
+	<h4>globeMC.setSunPosition(posObj)</h4>
+	<div class="indentedBlock">
+	<p>
+In standalone mode <code>posObj</code> should have <code>theta</code> and <code>phi</code> properties measured in degrees. In plug-in mode the position should be defined in a way that is recognized by the celestial sphere component (e.g. it has <code>ra</code> and <code>dec</code> properties).
+	</p>
+	</div>
+
+	<br>
+	<h4>globeMC.setViewerDirection(dirObj)</h4>
+	<div class="indentedBlock">
+	<p>
+This sets the orientation of the globe in standalone mode. <code>dirObj</code> should have <code>theta</code> and <code>phi</code> properties measured in degrees.
+	</p>
+	</div>
+
+	<br>
+	<h4>globeMC.getViewerDirection()</h4>
+	<div class="indentedBlock">
+	<p>
+Returns an object with <code>theta</code> and <code>phi</code> properties (for standalone mode only). 
+	</p>
+	</div>
+
+	<br>
+	<h4>globeMC.setShadingStyle(color, alpha)</h4>
+	<div class="indentedBlock">
+	<p>
+Use this function to set the fill style of the night-time shading used on the globe. The defaults are 0x000000 and 40.
+	</p>
+	</div>
+
+	<br>
+	<h4>globeMC.setAxisStyle(thickness, color, alpha)</h4>
+	<div class="indentedBlock">
+	<p>
+Use this function to set the line style of the earth's rotational axis. The defaults are 1, 0x000000, and 100.
+	</p>
+	</div>
+
+	<br>
+	<h4>globeMC.setWaterLinkageName(linkageName), globeMC.setLandLinkageName(linkageName)</h4>
+	<div class="indentedBlock">
+	<p>
+These functions are used to set which movieclips are used for the land and water parts of the globe. Each movieclip should contain a filled disc 100 pixels in diameter centered on the movieclip's origin. The default movieclips are located in the Resources folder of the component.
+	</p>
+	</div>
+
+</div>
+<!-- END INDENTED BLOCK -->
+
+
+<br><br>
+<h3>Properties</h3>
+
+<!-- BEGIN INDENTED BLOCK -->
+<div class="indentedBlock">
+
+	<br>
+	<h4>globeMC.size</h4>
+	<div class="indentedBlock">
+	<p>
+In standalone mode the size (the diameter of the globe) is measured in pixels. In the plug-in mode the size is the fractional size with respect to the celestial sphere the globe resides in. The defaults are 200 and 0.2, respectively.
+	</p>
+	</div>
+
+	<br>
+	<h4>globeMC.rotation</h4>
+	<div class="indentedBlock">
+	<p>
+Use this angle (measured in degrees) to rotate the globe about its instantaneous axis. The default is 0.	
+	</p>
+	</div>
+
+	<br>
+	<h4>globeMC.precession</h4>
+	<div class="indentedBlock">
+	<p>
+This angle (measured in degrees) shifts the axis of the earth's rotation as happens over the 26,000 year precession cycle. The default is 0.	
+	</p>
+	</div>
+
+	<br>
+	<h4>globeMC.showAxis</h4>
+	<div class="indentedBlock">
+	<p>
+This property sets the visibility of the earth's rotational axis. The default is <code>true</code>.
+	</p>
+	</div>
+
+	<br>
+	<h4>globeMC.axisLength</h4>
+	<div class="indentedBlock">
+	<p>
+In standalone mode this length is expressed as a multiple of the globe's size. In the plug-in mode this length is a multiple of the celestial sphere's size. In both modes the default is 1.4.
+	</p>
+	</div>
+
+	<br>
+	<h4>globeMC.showShading</h4>
+	<div class="indentedBlock">
+	<p>
+This property determines whether night-time shading is shown on the globe. The default is <code>false</code>.
+	</p>
+	</div>
+
+	<br>
+	<h4>globeMC.isDraggable</h4>
+	<div class="indentedBlock">
+	<p>
+This property determines whether the user can drag the globe around in standalone mode, thus changing the viewer direction. If the user drags the sphere around the <code>viewerDirectionChangeHandler</code> function of the parent of the globe component will be called (assuming it is defined). This property has no effect in the plug-in mode.
+	</p>
+	</div>
+
+</div>
+<!-- END INDENTED BLOCK -->
+
+
+<br><br>
+<h3>initObject Properties</h3>
+
+<!-- BEGIN INDENTED BLOCK -->
+<div class="indentedBlock">
+
+	<p>
+The defaults above can be changed by using the properties inspector (for a standalone dragged on the stage in the authoring environment) or by passing an initObject with any of the following properties:
+	</p>
+
+<pre>
+initSize
+initRotation
+initPrecession
+initViewerTheta
+initViewerPhi
+initIsDraggable
+viewerDirectionChangeHandler
+initShowAxis
+initAxisLength
+initAxisThickness
+initAxisColor
+initAxisAlpha
+initShowShading
+initSunPosition (an object that can be passed to setSunPosition)
+initSunTheta
+initSunPhi
+initShadingColor
+initShadingAlpha
+initWaterLinkageName
+initLandLinkageName
+isStandalone (usually you should let the component determine which mode it is in)
+</pre>
+
+
+</div>
+<!-- END INDENTED BLOCK -->
+
+
+</div>
+<!-- END PAGE BLOCK -->
+
+</body>
+</html>

@@ -1,0 +1,13 @@
+The native size of the movie is 650×300. Accepted flashvars:
+</p>
+
+<ul>
+<li><code>orbitDirection</code> - 'cw' or 'ccw' (default is 'ccw')</li>
+<li><code>earthArrowAngle</code> - in degrees ccw from <i>left</i> (default is 0); this causes the entire diagram to rotate; so, for example, if a label is given an angle of 0° it will always be at the opposite of the center of mass no matter what the value of <code>earthArrowAngle</code> is</li>
+<li><code>starLabels, planetLabels</code> - these are comma/semicolon delimited lists of labels; the semicolons separate the labels and the commas separate the parts of the label; each label consists of three parts: the angle, the label to show on the diagram, and the label to show on the velocity plot (note that the angle goes first, unlike for exoplanetOrbitDiagram); the angle is measured ccw from <i>right</i> where the earth view is at left (so 0° is always at the opposite side of the center of mass from the earth)</li>
+</ul>
+
+<p>
+The above example has the following flashvars line:
+<code>planetLabels=0,a,A;90,d,D&starLabels=0,c,C;90,b,B&orbitDirection=cw&earthArrowAngle=180</code>
+

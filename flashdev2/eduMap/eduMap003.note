@@ -1,0 +1,1 @@
+Added the ability to put lettered discs on the map. The locations of the these discs can be specified with the parameters aDiscLon, aDiscLat, bDiscLon, bDiscLat, cDiscLon, and cDiscLat. The size of the discs can be controlled with the optional parameter discScale, where discScale=1 is the default.

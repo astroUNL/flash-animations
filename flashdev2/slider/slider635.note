@@ -1,0 +1,1 @@
+Added the ability to show/hide the value field (via "show value field" in the properties inspector or the <code>showField</code> property).

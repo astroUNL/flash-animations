@@ -1,0 +1,1 @@
+Fixed a small bug which made the right side of a curve fill not quite vertical in certain limited circumstances. Example: open v016, set scaling mode to custom, set curve 1 peak height to 2, and sweep curve 1 temperature in the range 2100-2400.

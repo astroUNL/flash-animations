@@ -1,0 +1,12 @@
+Changes:</p>
+
+<ul>
+<li>added a <code>remove()</code> function to the curve object</li>
+<li>added a <code>visible</code> property to the curve object</li>
+<li>fixed a problem with the peak labels introduced in version 12</li>
+<li>fixed the longstanding potential for problems when plotting a curve that greatly exceeds the height of the plot area</li>
+<li>added the ability to change the axes label colors, either through the properties inspector or with the function setAxesLabelColor</li>
+<li>improved the accuracy of the curveTo approximation of the curves</li>
+</ul>
+
+<p><a href="simpleBlackbody/bbReadme.html">updated documentation</a>

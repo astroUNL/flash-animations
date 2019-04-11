@@ -1,0 +1,16 @@
+﻿<flash_project name="moonBisectorDemo" version="1">
+    <project_file path="./Scene3D.as" filetype="as" />
+    <project_file path="./OrbitalPlane.as" filetype="as" />
+    <project_file path="./PlaneRotator.as" filetype="as" />
+    <project_file path="./MoonBisectorDemo.fla" filetype="fla" profile="" def_file="true" />
+    <project_file path="./Globe.as" filetype="as" />
+    <project_file path="./Globe3D.as" filetype="as" />
+    <project_file path="./BisectingPlanesForGlobe3D.as" filetype="as" />
+    <project_file path="./Point3D.as" filetype="as" />
+    <project_file path="./IScene3DObject.as" filetype="as" />
+    <project_file path="./GlobeLayerFill.as" filetype="as" />
+    <project_file path="./GlobeLayer.as" filetype="as" />
+    <project_file path="./CubicEaser.as" filetype="as" />
+    <project_file path="./NAAPTitleBar.as" filetype="as" />
+    <project_file path="./NAAPDialogWindow.as" filetype="as" />
+</flash_project>

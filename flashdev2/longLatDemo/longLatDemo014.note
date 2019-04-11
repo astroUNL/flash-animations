@@ -1,0 +1,1 @@
+The shoreline data is now contained in the swf, so the xml file is no longer needed. Also, I fixed a layering issue with the city label and removed some of the extra white space.

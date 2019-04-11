@@ -1,0 +1,20 @@
+<a href="hrDiagramComponent/hrDiagramComponentNotes.html">updated documentation</a>
+</p>
+<p>
+Major changes:
+</p>
+<ul>
+<li>The biggest change is that the internal conversion functions (e.g. <code>getTypeFromLogTemp</code>) have been updated to better fit real data. These functions can be tweaked more if necessary (a newly created editor makes this relatively easy).</li>
+<li>Made changes to how the distance modulus shifting occurs. The property <code>apparentMagnitudeOffset</code> has been removed and the property <code>distanceModulus</code> behaves differently now. Any existing implementations of the component that use these properties will need to be rewritten.</li>
+<li>Updated the star lists and changed the default appearance of these groups.</li>
+<li>Improved and standardized the way styles are set for some things (e.g. the spectral type style settings). There are potential backwards-compatibility issues with some of the changes, but I doubt if anyone was using the old methods.</li>
+<li>Added the ability to add a group of stars from a list when using <code>addObjectLayer</code>.</li>
+<li>Added the <code>removeObjectLayer</code> and <code>removeAllObjects</code> functions.</li>
+<li>Modified <code>updateObjects</code> so one can now update just a subset of parameters.</li>
+<li>Updated the live preview and fixed it so that the component can be added by <code>attachMovie</code>.</li>
+<li>Added a property <code>skipInitUpdate</code>, which if <code>true</code> will cause the component not to update itself after initialization. It can be set in the init object if using <code>attachMovie</code> or at the bottom of the live update panel in the authoring environment. This should improve efficiency if you're going to immediately change the component settings after initialization.</li>
+<li>Address issues with the luminosity class lines.</li>
+<li>Compatibility problems with AS2 have been fixed.</li>
+<li>Numerous bug fixes.</li>
+</ul>
+<p>

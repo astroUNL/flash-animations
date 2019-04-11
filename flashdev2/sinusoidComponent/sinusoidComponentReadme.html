@@ -1,0 +1,108 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"> 
+
+<html>
+<head>
+
+<title>Sinusoid Component</title>
+
+<meta http-equiv=Content-Type content="text/html;  charset=ISO-8859-1">
+
+<link rel="stylesheet" type="text/css" href="pageStyle.css">
+
+</head>
+<body>
+
+<!-- BEGIN PAGE BLOCK -->
+<div class="pageBlock">
+
+<h2>Sinusoid Component</h2>
+
+<br><br>
+<h3>Methods</h3>
+
+<!-- BEGIN INDENTED BLOCK -->
+<div class="indentedBlock">
+
+	<br>
+	<h4>waveMC.pauseAnimation(), waveMC.startAnimation()</h4>
+	<div class="indentedBlock">
+	<p>
+These two functions control the animation state. You can also use the <code>animate</code> property (see below).
+	</p>
+	</div>
+
+	<br>
+	<h4>waveMC.update()</h4>
+	<div class="indentedBlock">
+	<p>
+Call <code>update()</code> after adjusting properties of the wave.
+	</p>
+	</div>
+
+	<br>
+	<h4>waveMC.setStyle(obj)</h4>
+	<div class="indentedBlock">
+	<p>
+Use this function to set the linestyle used for the curve. The object <code>obj</code> can have properties <code>thickness</code>, <code>color</code>, <code>alpha</code>, and (instead of <code>color</code>) <code>wavelength</code>. If <code>wavelength</code> is a number between 400 and 700 the color of the curve will be that of the corresponding wavelength of light (in nm).
+	</p>
+	</div>
+
+</div>
+<!-- END INDENTED BLOCK -->
+
+
+<br><br>
+<h3>Properties</h3>
+
+<!-- BEGIN INDENTED BLOCK -->
+<div class="indentedBlock">
+
+	<br>
+	<h4>waveMC.wavelength</h4>
+	<div class="indentedBlock">
+	<p>
+<code>wavelength</code> is specified in pixels.
+	</p>
+	</div>
+
+	<br>
+	<h4>waveMC.amplitude</h4>
+	<div class="indentedBlock">
+	<p>
+<code>amplitude</code> is specified in pixels.
+	</p>
+	</div>
+
+	<br>
+	<h4>waveMC.width</h4>
+	<div class="indentedBlock">
+	<p>
+<code>width</code> determines the horizontal extent of the sinusoid component, in pixels.
+	</p>
+	</div>
+
+	<br>
+	<h4>waveMC.phase</h4>
+	<div class="indentedBlock">
+	<p>
+<code>phase</code> is given as a number between 0 and 1.
+	</p>
+	</div>
+
+	<br>
+	<h4>waveMC.animate</h4>
+	<div class="indentedBlock">
+	<p>
+This property reflects and controls the animation state: <code>true</code> if animating and <code>false</code> if paused. Note also the <code>pauseAnimation()</code> and <code>startAnimation()</code> functions (see above).
+	</p>
+	</div>
+
+</div>
+<!-- END INDENTED BLOCK -->
+
+</div>
+<!-- END PAGE BLOCK -->
+
+</body>
+</html>

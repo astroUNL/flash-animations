@@ -1,0 +1,15 @@
+In this version there are three Cepheids and three RR Lyrae stars available for plotting.</p>
+
+<p>Properties and methods:</p>
+
+<ul>
+<li><code>selectStar(name)</code></li>
+<li><code>plotInterval</code></li>
+<li><code>verticalMargin</code></li>
+<li><code>update</code></li>
+</ul>
+
+<p>Use <code>selectStar(name)</code> to select the star, where <code>name</code> is one of the following strings:"del Cep", "RT Mus", or "PZ Aql" (Cepheids); or "MT Tel", "RR Leo", or "VX Her" (RR Lyrae).</p>
+
+<p>The properties <code>plotInterval</code> and <code>verticalMargin</code> can be used to change the plot's appearance. Call the <code>update</code> function after changing them. (<code>update</code> does not need to be called after using the <code>selectStar</code> function.)
+

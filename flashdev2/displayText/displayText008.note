@@ -1,0 +1,1 @@
+Changed it so that the function converts the first argument (<code>textString</code>) to a string if necessary (previously it would return <code>null</code> if it was not a string).

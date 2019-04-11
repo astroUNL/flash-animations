@@ -1,0 +1,18 @@
+This component has five functions:
+</p>
+
+<ul>
+<li>setStarPosition(ra, dec)</li>
+<li>setShowStar(bool)</li>
+<li>setShowPositionArcs(bool)</li>
+<li>setShowPositionLabels(bool)</li>
+<li>setShowSphereLabels(bool)</li>
+</ul>
+
+<p>
+The sphere will automatically reposition itself when setStarPosition is called unless the autoRotate property is false.
+</p>
+
+<p>
+For this to work both the celestial sphere and globe ("Globe Component v2") components must be in the library.
+

@@ -1,0 +1,124 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"> 
+
+<html>
+<head>
+
+<title>Sun and Moon Diagram Component</title>
+
+<meta http-equiv=Content-Type content="text/html;  charset=ISO-8859-1">
+
+<link rel="stylesheet" type="text/css" href="pageStyle.css">
+
+</head>
+<body>
+
+<!-- BEGIN PAGE BLOCK -->
+<div class="pageBlock">
+
+<h2>Sun and Moon Diagram Component</h2>
+
+<br><br>
+<h3>Event Handlers</h3>
+
+<!-- BEGIN INDENTED BLOCK -->
+<div class="indentedBlock">
+
+	<br>
+	<h4>diagramMC.onViewerDirectionChanged()</h4>
+	<div class="indentedBlock">
+	<p>
+This function (if defined) is called whenever the diagram orientation changes due to dragging.
+	</p>
+	</div>
+
+</div>
+<!-- END INDENTED BLOCK -->
+
+
+<br><br>
+<h3>Methods</h3>
+
+<!-- BEGIN INDENTED BLOCK -->
+<div class="indentedBlock">
+
+	<br>
+	<h4>diagramMC.addSun(angle)</h4>
+	<div class="indentedBlock">
+	<p>
+This function adds a sun icon ("Sun Icon for Diagram" in the library) on the celestial equator at the angle specified by <code>angle</code>. The angle is measured counter-clockwise from the meridian in degrees.
+	</p>
+	</div>
+
+	<br>
+	<h4>diagramMC.addMoon(angle)</h4>
+	<div class="indentedBlock">
+	<p>
+This function adds a moon icon ("Moon Icon for Diagram" in the library) on the celestial equator at the angle specified by <code>angle</code>. The angle is measured counter-clockwise from the meridian in degrees.
+	</p>
+	</div>
+
+	<br>
+	<h4>diagramMC.getSunLocations(), diagramMC.getMoonLocations()</h4>
+	<div class="indentedBlock">
+	<p>
+The function <code>getSunLocations</code> returns an array of angles where sun icons have been added. The <code>getMoonLocations</code> function does the same for the moon icons.
+	</p>
+	</div>
+
+	<br>
+	<h4>diagramMC.setSize(size)</h4>
+	<div class="indentedBlock">
+	<p>
+<code>size</code> is the diameter of the celestial sphere in pixels. The default is 150 px.
+	</p>
+	</div>
+
+	<br>
+	<h4>diagramMC.setLatitude(lat)</h4>
+	<div class="indentedBlock">
+	<p>
+<code>lat</code> is in degrees. The default is 41&deg;.
+	</p>
+	</div>
+
+	<br>
+	<h4>diagramMC.setViewerDirection(az, alt)</h4>
+	<div class="indentedBlock">
+	<p>
+<code>az</code> and <code>alt</code> (both in degrees) determine the orientation of the celestial sphere. The defaults are 200&deg; and 30&deg;.
+	</p>
+	</div>
+
+	<br>
+	<h4>diagramMC.getViewerDirection()</h4>
+	<div class="indentedBlock">
+	<p>
+This function returns an object with <code>az</code> and <code>alt</code> properties, which define the orientation of the diagram.
+	</p>
+	</div>
+
+	<br>
+	<h4>diagramMC.startDragging(), diagramMC.stopDragging()</h4>
+	<div class="indentedBlock">
+	<p>
+When dragging the sphere's perspective (viewer direction) changes as the mouse moves.
+	</p>
+	</div>
+
+	<br>
+	<h4>diagramMC.clearDiagram()</h4>
+	<div class="indentedBlock">
+	<p>
+This function removes all the sun and moon icons that have been attached to the celestial sphere.
+	</p>
+	</div>
+
+</div>
+<!-- END INDENTED BLOCK -->
+
+</div>
+<!-- END PAGE BLOCK -->
+
+</body>
+</html>

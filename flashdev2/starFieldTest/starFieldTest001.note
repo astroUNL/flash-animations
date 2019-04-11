@@ -1,0 +1,1 @@
+First light. There are five stars: magnitudes 1 through 5. The saturation magnitude is 3 (so the middle star is just saturated), the PSF radius is 7 pixels, the bit depth is 16 bits, and there is a gaussian noise profile with mean 5000 counts and standard deviation of 3000 counts. The data mapping is linear.

@@ -1,0 +1,1 @@
+Changed class names and linkage names to avoid problems when a movie loads swfs with different versions of this component. Otherwise, this component should be functionally identical to version 040.

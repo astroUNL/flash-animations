@@ -1,0 +1,5 @@
+The doppler shift in this component is set with the <code>setShift</code> function, where the shift is the pixel offset from the center. Most of the appearance parameters can be adjusted in the live preview.
+</p>
+
+<p>
+The demonstration swf above looks for the <code>shift</code> flashvar (the shift is given in pixels; the default is 0). The native size of this swf is 310×120. The width can be changed in the embedding block but the height should always be 120. 

@@ -1,0 +1,1 @@
+This Flash will put 3 lettered discs on the globe. The parameters to define the locations of these discs are aLat, aLon, bLat, bLon, cLat, and cLon. Optionally, the viewing perspective can be set using viewLat and viewLon, which define the location of the sub-viewer point.

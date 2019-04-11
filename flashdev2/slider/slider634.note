@@ -1,0 +1,7 @@
+made two fixes related to the tab (mouse free) mode:
+</p>
+<ul>
+<li>fixed it so that tabbing-off the value field does not result in the change handler being called unless the value was being edited</li>
+<li>fixed the problem that would cause double incrementing when adjusting the grabber position with the arrow keys</li>
+</ul>
+<p>

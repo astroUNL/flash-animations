@@ -1,0 +1,42 @@
+</p>
+<pre>
+
+example:
+
+ demoMC.addSweep("blueSweep", {centerAngle: 0, duration: 0.1}, {fillColor: 0x0000ff});
+
+ demoMC.addSweep("greenSweep");
+ demoMC.greenSweep.setStyle({fillColor: 0x00ff00, fillAlpha: 60, showOutline: true, outlineColor: 0x909090});
+ demoMC.greenSweep.setDefinition({startAngle: 90, duration: 0.25});
+
+properties:
+
+ eccentricity
+ semimajorAxis
+ showOrbit
+
+methods:
+
+ addSweep(name, defObj, styleObj)
+  - name should be a string, defObj and styleObj should
+    adhere to the rules below for sweeps
+ removeAllSweeps()
+ setOrbitStyle(styleObj)
+  - styleObj can have properties thickness, color, and alpha
+ setCenter(type)
+  - type should be "ellipse center" or "ellipse focus"
+
+sweep methods:
+
+ setDefinition(defObj)
+  - defObj should have a duration property (a number
+    between 0 and 1) and one of startAngle, centerAngle
+    or endAngle, which define the position of the sweep
+    in degrees
+ setStyle(styleObj)
+  - styleObj can have properties fillColor, fillAlpha, showOutline,
+    outlineThickness, outlineColor, and outlineAlpha
+ remove()
+
+</pre>
+<p>

@@ -1,0 +1,1 @@
+Added getMassFromLuminosity, getLuminosityFromRadiusAndTemp, and getTempFromLuminosityAndRadius. Also tweaked getRadiusFromTempAndLuminosity to be more consistent with other functions (it now uses an effective solar temperature of 5808.3 K). Note that getLuminosityFromRadiusAndTemp and getTempFromLuminosityAndRadius are not demonstrated, though they have been tested.

@@ -1,0 +1,5 @@
+In version 002 the planet and star discs would be drawn only if there were no labels. Now it is possible to have labels and discs by using the boolean <code>showDiscs</code>. The default for this property is true when no labels have been added and false when there are labels.
+</p>
+
+<p>
+One necessary consequence of these changes is that there is no longer any margin to the curve on the radial velocity plot.

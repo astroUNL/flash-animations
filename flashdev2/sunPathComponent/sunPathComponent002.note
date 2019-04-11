@@ -1,0 +1,13 @@
+The component has the following properties:
+<br><br>
+latitude &ndash; the latitude of the stickfigure
+<br> 
+time &ndash; the time of day in decimal hours, where 0 = midnight and 12 = noon
+<br>
+declination &ndash; the declination of the sun, in degrees
+<br>
+period &ndash; the time it takes to complete one simulated day, in seconds
+<br>
+animate &ndash; boolean that controls the animation state
+<br><br>
+The celestial sphere component must be in the library for this sun path component to work.

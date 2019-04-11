@@ -1,0 +1,279 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"> 
+
+<html>
+<head>
+
+<title>Simple Blackbody Plot Component</title>
+
+<meta http-equiv=Content-Type content="text/html;  charset=ISO-8859-1">
+
+<link rel="stylesheet" type="text/css" href="pageStyle.css">
+
+</head>
+<body>
+
+<!-- BEGIN PAGE BLOCK -->
+<div class="pageBlock">
+
+<h2>Simple Blackbody Plot Component</h2>
+
+<br><br>
+<h3>Blackbody Plot Methods</h3>
+
+<!-- BEGIN INDENTED BLOCK -->
+<div class="indentedBlock">
+
+	<br>
+	<h4>plotMC.addCurve(name, [temp, [style]])</h4>
+	<div class="indentedBlock">
+	<p>
+This function adds a curve to the plot. The parameter <code>name</code> will be the reference used to address the curve. For example, the temperature of a curve can be set using the following syntax:
+	</p>
+<pre>
+	<code>plotMC.addCurve("curveName");</code>
+	<code>plotMC.curveName.temperature = 5800;</code>
+</pre>
+	<p>(See "Curve Specific Properties and Methods" below for other curve features.)
+	<p>The <code>temp</code> and <code>style</code> parameters are optional. <code>style</code> should be an object with <code>thickness</code>, <code>color</code>, and <code>alpha</code> properties.</p>
+	<p>Note that you don't have to use code to add a curve. Typing a value in the "bbCurve temperature" field in the Properties Inspector will cause the plot component to automatically add a curve (with the name of "bbCurve") to the plot with the given temperature.</p>
+	</div>
+	
+	<br>	
+	<h4>plotMC.setVerticalScalingMode(mode, [targetHeight, [curves]])</h4>
+	<div class="indentedBlock">
+	<p>
+<code>mode</code> should be either of the strings "autoscale", "locked", or "custom", indicating whether the vertical axis rescales in response to changes in the curves' temperatures. The default behavior is to autoscale to all curves so that the peak brightness is at 90% of the vertical height of the plot area (even if the peak is off to the left or right of the plot area).
+</p>
+<p>
+In "custom" mode the vertical scaling of each curve can be set using each curve's <code>peakHeight</code> property (see below). The y-axis labels and tickmarks are suppressed in this mode since the plot is no longer showing intensity.
+</p>
+<p>
+<code>targetHeight</code> is the preferred ratio of the maximum peak brightness (of all the curves selected for autoscaling) to the brightness at the top of the plot window. So if <code>targetHeight</code> is 1 the highest peak will touch the top of the plot, and if it is 0.75 the peak will reach three-quarters of the way to the top of the plot. The default is 0.9.
+</p>
+<p>
+<code>curves</code> can be a single name (a string) or an array of names specifying which curves should be used to do autoscaling. If this parameter is omitted all curves will be used.
+	</p>
+	</div>
+
+	<br>	
+	<h4>plotMC.setAxesLabelColor(color)</h4>
+	<div class="indentedBlock">
+<p>
+This function sets the color of the axes labels (both x and y). This can also be done in the properties inspector. No update is required after calling this function. If you aren't using the default tickmark labels in the resources folder please note that the label colors are set by sending the label movieclips <code>labelColor</code> as an initObject with the color given in the properties inspector, and by attempting to call the function <code>setLabelColor</code> when the color changes after initialization.
+</p>
+	</div>
+
+	<br>	
+	<h4>plotMC.update(updateEverything)</h4>
+	<div class="indentedBlock">
+<p>There are several update functions, but the catch-all function <code>update</code> is probably the only one you need to use. If the argument <code>updateEverything</code> is true then all the update functions will be called. Otherwise only the scale, vertical axis, and curves will be updated (which is what you want if you just changed a curve's temperature and autoscaling is on). Unless there is some need for saving every last CPU cycle, the thing to do is</p>
+<ul>
+<li>call <code>plotMC.update()</code> if a curve's temperature has changed</li>
+<li>call <code>plotMC.update(true)</code> otherwise</li>
+</ul>
+	</div>
+
+</div>
+<!-- END INDENTED BLOCK -->
+
+
+<br><br>
+<h3>Blackbody Plot Properties</h3>
+
+<!-- BEGIN INDENTED BLOCK -->
+<div class="indentedBlock">
+
+	<br>
+	<h4>plotMC.width, plotMC.height</h4>
+	<div class="indentedBlock">
+	<p>
+These properties set the dimensions of the plot area. Default dimensions are 400px by 250px.
+	</p>
+	</div>
+
+	<br>
+	<h4>plotMC.minWavelength, plotMC.maxWavelength</h4>
+	<div class="indentedBlock">
+	<p>
+These properties set the range of the horizontal axis (in meters). Defaults are 100e-9 and 900e-9.
+	</p>
+	</div>
+
+	<br>
+	<h4>plotMC.showVisibleSpectrum</h4>
+	<div class="indentedBlock">
+	<p>
+A boolean indicating whether the visual spectrum rainbow is drawn. The default is true.
+	</p>
+	</div>
+
+	<br>
+	<h4>plotMC.showXAxis, plotMC.showYAxis</h4>
+	<div class="indentedBlock">
+	<p>
+Booleans indicating whether to draw the horizontal and vertical axes, which include the axis line, tickmarks, and labels. Defaults are true.
+	</p>
+	</div>
+
+	<br>
+	<h4>plotMC.axesThickness, plotMC.axesColor, plotMC.axesAlpha</h4>
+	<div class="indentedBlock">
+	<p>
+These are the linestyle properties used for the drawing the axes. The default is a black (100% alpha) line with thickness of 1px.
+	</p>
+	</div>
+
+	<br>
+	<h4>plotMC.showBorder</h4>
+	<div class="indentedBlock">
+	<p>
+A boolean that determines whether a border is drawn around the plot area. The default is false.
+	</p>
+	</div>
+
+	<br>
+	<h4>plotMC.borderThickness, plotMC.borderColor, plotMC.borderAlpha</h4>
+	<div class="indentedBlock">
+	<p>
+These are the linestyle properties for the border. The default is a gray (0xcccccc, 100% alpha) line of thickness 1px. 
+	</p>
+	</div>
+
+	<br>
+	<h4>plotMC.backgroundColor, plotMC.backgroundAlpha</h4>
+	<div class="indentedBlock">
+	<p>
+These are the fill properties for the background of the plot area. The default is white at 100% alpha.
+	</p>
+	</div>
+
+	<br>
+	<h4>plotMC.majorTickmarkExtent, plotMC.minorTickmarkExtent</h4>
+	<div class="indentedBlock">
+	<p>
+These properties specify the distances that the tickmarks stick out from the axes. <code>minorTickmarkExtent</code> also determines the size of the visible spectrum band (if shown). The defaults are 10px for <code>majorTickmarkExtent</code> and 7px for <code>minorTickmarkExtent</code>.
+	</p>
+	</div>
+
+	<br>
+	<h4>plotMC.xTickLabelSymbol, plotMC.yTickLabelSymbol</h4>
+	<div class="indentedBlock">
+	<p>
+These are the linkage names of the movieclips in the library to use for the axes' labels. The default clips are "Default X Tickmark Label" and "Default Y Tickmark Label", which are found in the Resources subfolder. You can leave these fields blank to suppress the labels (while leaving the tickmarks). These values should only be set with the Properties Inspector.
+	</p>
+	</div>
+
+	<br>
+	<h4>plotMC.minScreenXSpacing, plotMC.minScreenYSpacing</h4>
+	<div class="indentedBlock">
+	<p>
+These properties set the mininum allowed screen distances between labels on each axis. Defaults are 45px for the horizontal axis and 30px for the vertical axis.
+	</p>
+	</div>
+
+	<br>
+	<h4>plotMC.maxBrightness</h4>
+	<div class="indentedBlock">
+	<p>
+This is the brightness limit ('intensity' may be the more precise term) of the vertical axis in W/(m<sup>2</sup>·sr·m). Changing this value is useful only when the vertical axis is "locked" (cf. <code>setVerticalScalingMode</code>). 
+	</p>
+	</div>
+
+</div>
+<!-- END INDENTED BLOCK -->
+
+
+<br><br>
+<h3>Curve Specific Properties and Methods</h3>
+
+<!-- BEGIN INDENTED BLOCK -->
+<div class="indentedBlock">
+
+	<br>
+	<h4>plotMC.curveName.temperature</h4>
+	<div class="indentedBlock">
+	<p>
+The temperature associated with the curve. The default is <code>null</code> (which means the curve is not drawn).
+	</p>
+	</div>
+
+	<br>
+	<h4>plotMC.curveName.setStyle(styleObj)</h4>
+	<div class="indentedBlock">
+	<p>
+<code>styleObj</code> should be an object with any of the following properties: <code>thickness</code>, <code>color</code>, <code>alpha</code>, <code>fillColor</code>, and <code>fillAlpha</code>. The default style is a black (100% alpha) line of thickness 1px and a 20% transparent red fill. Note that the fill (that is, the area under the curve) is not shown by default, see <code>showFill</code> below.
+	</p>
+	</div>
+
+	<br>
+	<h4>plotMC.curveName.showFill</h4>
+	<div class="indentedBlock">
+	<p>
+A boolean property that determines whether the area under the curve is colored. The default is <code>false</code>. Use <code>setStyle</code> to set the style of the fill.
+	</p>
+	</div>
+
+	<br>
+	<h4>plotMC.curveName.peakHeight</h4>
+	<div class="indentedBlock">
+	<p>
+If "custom" vertical scaling is used <code>peakHeight</code> specifies how high the peak of the curve is as a fraction of the plot area height. So if <code>peakHeight</code> is 1 the curve is scaled so that the peak is at the top of the plot area. The default is 0.9. 
+	</p>
+	</div>
+
+	<br>
+	<h4>plotMC.curveName.addPeakLabel(linkageName, initObject)</h4>
+	<div class="indentedBlock">
+<p>
+<code>linkageName</code> is the name of the movieclip in the library to be displayed at the peak. Optionally, you can provide an <code>initObject</code> to populate the attached clip.
+</p>
+<p>
+The property <code>peakLabel</code> (see below) can be used to access the movieclip.
+</p> 
+	</div>
+
+	<br>
+	<h4>plotMC.curveName.peakLabel</h4>
+	<div class="indentedBlock">
+<p>
+<code>peakLabel</code> is the instance of the peak label (if one has been attached). This property is useful if you want to change the label text.
+</p> 
+	</div>
+
+	<br>
+	<h4>plotMC.curveName.getPeakWavelength()</h4>
+	<div class="indentedBlock">
+<p>
+This function returns the wavelength (in meters) where the curve peaks.
+</p>
+	</div>
+
+	<br>
+	<h4>plotMC.curveName.visible</h4>
+	<div class="indentedBlock">
+<p>
+This function toggles the visibility of the curve. You must call the <code>update</code> function (see above) after making a curve visible. However, hiding a curve requires no update.
+</p>
+	</div>
+
+	<br>
+	<h4>plotMC.curveName.remove()</h4>
+	<div class="indentedBlock">
+<p>
+This function removes the curve from the plot. The change is immediate &mdash; no update is required.
+</p>
+	</div>
+
+
+</div>
+<!-- END INDENTED BLOCK -->
+
+
+
+
+</div>
+<!-- END PAGE BLOCK -->
+
+</body>
+</html>

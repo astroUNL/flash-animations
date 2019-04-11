@@ -1,0 +1,7 @@
+This Flash accepts 4 flashvars parameters:</p>
+<ul>
+<li>numLat - number of latitude circles (spaced evenly in altitude between the poles)</li>
+<li>numLon - number of longitude hemicircles</li>
+<li>latColor, lonColor - optional parameters to specify the colors of the lines, in hexadecimal (e.g. latColor=ff0000 for red latitude lines)</li>
+</ul>
+<p>

@@ -1,0 +1,10 @@
+changes:</p>
+
+<ul>
+<li>fixed case bug</li>
+<li>added function <code>stepLabelsBy(n)</code>, so that labels are only shown every n<sup>th</sup> power of ten; in the example above n is 2</li>
+<li>added function <code>showMinorTicks(arg)</code>, where arg is a boolean indicating whether minor tickmarks are shown; in the example above this is set to false</li>
+<li>added an optional <code>width</code> parameter to the bar objects, so each bar's width can be specified individually (otherwise the default bar width is used); in the example above a narrow "empty" bar is used to physically separate the "16+" category from the rest</li>
+</ul>
+
+<p>This example also shows what can be done with a custom bar. Rolling over displays the value associated with that bar. Clicking the value lets you drag it around the screen.

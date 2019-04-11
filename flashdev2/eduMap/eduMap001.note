@@ -1,0 +1,11 @@
+This Flash movie can be used for both the named line and random coordinate questions. The accepted flashvars parameters are:</p>
+<ul>
+<li>crossLon, crossLat - if both are defined a cross is added at that coordinate</li>
+<li>lineLat - if defined a line is added at that latitude</li>
+<li>lineLon - if defined a line is added at that longitude (cf. showIDL below)</li>
+<li>showIDL - if showIDL=true and lineLon=180 then the IDL is drawn instead of the 180&deg; longitude line</li>
+<li>offset - optional, specifies the initial longitude at the left side of the map, the default is either 120&deg; west of the cross, or 120&deg; west of the longitude line, or 190&deg;</li>
+<li>crossColor - optional, specifies the color of the cross in hexadecimal (e.g. crossColor=ff0000 for red), default is black</li>
+<li>lineColor - optional, specifies the color of the lines</li>
+</ul>
+<p>The natural size of this movie is 350x180.

@@ -1,0 +1,20 @@
+This component has seven functions:
+</p>
+
+<ul>
+<li>setStarPosition(az, alt)</li>
+<li>setShowStar(bool)</li>
+<li>setShowPositionArcs(bool)</li>
+<li>setShowPositionLabels(bool)</li>
+<li>setShowSphereLabels(bool)</li>
+<li>setLatitude(lat)</li>
+<li>setShowCelestialFeaturesAndLabels(bool)</li>
+</ul>
+
+<p>
+The sphere will automatically reposition itself when setStarPosition is called unless the autoRotate property is false.
+</p>
+
+<p>
+This component requires the celestial sphere component to be in the library.
+

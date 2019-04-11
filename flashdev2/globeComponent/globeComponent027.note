@@ -1,0 +1,36 @@
+<a href="globeComponent/index.html">documentation</a>
+</p>
+
+<p>
+This is a new version of the globe component. It is designed to be easier to use, and can be used either as an object of the celestial sphere component (plug-in), or as an isolated component (standalone) with a live preview.
+</p>
+
+<p>
+When used in the celestial sphere there is no need for the programmer to manually update and position the globe (unlike the earlier globe component), all of that happens automatically. For example, you do not have to define a onMouseUpdate function that repositions the globe when the user drags the celestial sphere around. To add the globe to a celestial sphere instance, all you need is the following line of code:
+</p>
+
+<pre>
+sphereMC.addObject("Globe Component v2", "globe");
+</pre>
+
+<p>
+Then, if you want to show sun shading, you would add the following:
+<p>
+
+<pre>
+sphereMC.globe.instance.showShading = true;
+sphereMC.globe.instance.setSunPosition({ra: 0, dec: 0});
+</pre>
+
+<p>
+All function calls and changes to property values take effect immediately -- you do not have to call an update function.
+</p>
+
+<p>
+Note: if you want to show the equator or other features on the globe you still need to do the sphere in a sphere trick.
+</p>
+
+<p>
+
+
+

@@ -1,0 +1,16 @@
+
+<p>
+The shoreline data comes from <a href="http://www.ngdc.noaa.gov/mgg/shorelines/data/gshhs/">here</a>. All the datasets at this location have too high of resolution to be usuable in Flash so they have to be reduced in size.
+</p>
+
+<p>
+The program <code>gshhs_dp</code> was used to create several datasets with reduced numbers of polygons and points. For example, <code>si75.xml</code> was generated using a 75 km tolerance from the <code>gshhs_i.b</code> data file (actually, <code>gshhs_dp</code> produces an intermediate binary file that can be converted to xml using <a href="shoreDemo/gshhs_xml.rar">this program</a>).
+</p>
+
+<p>
+<a href="shoreDemo/shoreDataFiles.rar">shoreDataFiles.rar</a> &ndash; contains several datasets of different resolutions
+</p>
+
+<p>
+Finally, you will definitely want to get version 7,0,14,0 of the flash player (<a href="http://www.flash.com/shockwave/download/download.cgi?P1_Prod_Version=ShockwaveFlash">link</a>).
+</p>

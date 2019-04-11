@@ -1,0 +1,3 @@
+This file contains the function <code>MovieClip.prototype.drawArc(x, y, radius, startAngle, endAngle)</code>, which draws an arc on the movieclip centered at coordinates <code>x</code> and <code>y</code> with the specified <code>radius</code>. The arc starts at <code>startAngle</code> and ends at <code>endAngle</code>, where these angles are measured in radians from the +x axis, going counterclockwise. This function requires that <code>MovieClip.prototype.maxArcStep</code> be defined.
+</p>
+<p class="verNote">This file dates from July 2003 so don't use the slider in its library.

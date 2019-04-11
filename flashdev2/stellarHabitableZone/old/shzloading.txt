@@ -1,0 +1,229 @@
+
+
+// the code in this layer loads the stellar evolutionary data into
+// the starsList array
+
+
+//// load the evolutionary data
+//var filesList:Array = ["003","004","005","006","007","008","009","010","011","012","015","020","025","040","080","150","300"];
+//
+//var request:URLRequest = new URLRequest();
+//var loader:URLLoader  = new URLLoader ();
+//loader.addEventListener("complete", onComplete);
+//
+//var currFile:int = 0;
+//
+
+
+var loader:URLLoader = new URLLoader();
+loader.addEventListener("complete", onStarsLoaded);
+loader.dataFormat = "binary";
+loader.load(new URLRequest("shzStars.dat"));
+
+function onStarsLoaded(...ignored):void {
+	starsListBA = loader.data;
+	doneLoadingData();
+}
+
+
+//var combinedData:Array = [];
+//
+//function onComplete(...ignored):void {
+//	var linesList:Array = loader.data.split("\n");
+//	
+//	var i:int, j:int;
+//	var partsList:Array;
+//	
+//	var n:int;
+//	
+//	var data:ByteArray = new ByteArray();
+//	var epochs:Array = [];
+//	
+//	var mostRecentTime:Number;
+//	
+//	var currType:int = -1;
+//	
+//	var starMass:Number;
+//	
+//	
+//	for (i=0; i<linesList.length; i++) {
+//		partsList = linesList[i].split(" ");
+//		n = 0;
+//		for (j=0; j<partsList.length; j++) {
+//			if (partsList[j]!="") {
+//				if (n==0) {
+//					// time
+//					mostRecentTime = parseFloat(partsList[j]);
+//					data.writeFloat(mostRecentTime);
+//				}
+//				else if (n==1) {
+//					if (currType!=parseInt(partsList[j])) {
+//						currType = parseInt(partsList[j]);
+//						epochs.push({time: mostRecentTime, type: currType});
+//					}
+//				}
+//				else if (n==3) {
+//					// mass
+//					if (i==0) starMass = parseFloat(partsList[j]);
+//					data.writeFloat(parseFloat(partsList[j]));
+//				}
+//				else if (n==4) {
+//					// luminosity
+//					data.writeFloat(parseFloat(partsList[j]));
+//				}
+//				else if (n==5) {
+//					// radius
+//					data.writeFloat(parseFloat(partsList[j]));
+//				}
+//				else if (n==6) {
+//					// temperature
+//					data.writeFloat(parseFloat(partsList[j]));
+//				}
+//				
+//				n++;				
+//			}
+//		}
+//	}
+//	
+//	combinedData[currFile-1] = {mass: starMass, timespan: mostRecentTime, rawDataTable: data, epochsList: epochs};
+//	
+//	loadNextFile();
+//}
+
+
+var starsListBA:ByteArray;
+
+//function loadNextFile():void {
+//	if (currFile>=filesList.length) {
+//		
+//		starsListBA = new ByteArray();
+//		starsListBA.position = 0;
+//		starsListBA.length = 0;
+//		starsListBA.writeObject(combinedData);
+//		starsListBA.compress();
+//	
+//		doneLoadingData();	
+//		
+//		return;
+//	}
+//	request.url = "data/" + filesList[currFile] + ".dat";
+//	//trace(request.url);
+//	currFile++;
+//	loader.load(request);
+//}
+//
+//loadNextFile();
+
+
+
+var starsList:Array;
+
+function doneLoadingData():void {	
+	starsListBA.position = 0;
+	
+//	var file:FileReference = new FileReference();
+//	file.save(starsListBA);
+//	
+//	return;
+	
+	starsListBA.uncompress();
+	starsList = starsListBA.readObject() as Array;
+		
+	//trace("num stars: "+starsList.length);
+	
+	var i:int, j:int;
+	
+	var n:int;
+	var dT:Array;
+	var rdT:ByteArray;
+	var d:Object;
+	
+	var maxLogLum:Number;
+	var minLogLum:Number;
+	
+	var maxLogRadius:Number;
+	var minLogRadius:Number;
+	
+	var maxMass:Number;
+	var minMass:Number;
+	
+	var massValues:Array = [];
+	
+	for (i=0; i<starsList.length; i++) {
+		
+		dT = [];
+		rdT = starsList[i].rawDataTable;
+		
+		n = rdT.length/20;
+		
+		rdT.position = 0;
+				
+		maxLogLum = Number.NEGATIVE_INFINITY;
+		minLogLum = Number.POSITIVE_INFINITY;
+		
+		maxLogRadius = Number.NEGATIVE_INFINITY;
+		minLogRadius = Number.POSITIVE_INFINITY;
+		
+		maxMass = Number.NEGATIVE_INFINITY;
+		minMass = Number.POSITIVE_INFINITY;
+		
+		for (j=0; j<n; j++) {
+			d = {};
+			d.time = rdT.readFloat();
+			d.mass = rdT.readFloat();
+			d.logLum = rdT.readFloat();
+			d.logRadius = rdT.readFloat();
+			d.logTemp = rdT.readFloat();
+			
+			// these get filled later, in calculateExtraData()
+			d.shzInner = 1;
+			d.shzOuter = 1;
+			d.shzTemp = 1;
+			d.distance = 1;
+			
+			dT[j] = d;
+			
+			if (d.mass>maxMass) maxMass = d.mass;
+			if (d.mass<minMass) minMass = d.mass;
+			
+			if (d.logLum>maxLogLum) maxLogLum = d.logLum;
+			if (d.logLum<minLogLum) minLogLum = d.logLum;
+			
+			if (d.logRadius>maxLogRadius) maxLogRadius = d.logRadius;
+			if (d.logRadius<minLogRadius) minLogRadius = d.logRadius;
+		}
+		
+		starsList[i].dataTable = dT;
+		starsList[i].maxLogLum = maxLogLum;
+		starsList[i].minLogLum = minLogLum;
+		starsList[i].maxLogRadius = maxLogRadius;
+		starsList[i].minLogRadius = minLogRadius;
+		starsList[i].maxMass = maxMass;
+		starsList[i].minMass = minMass;
+		
+		//starsComboBox.addItem({label: String(starsList[i].mass)+" Msun", data: starsList[i]});
+		
+		massValues.push(starsList[i].mass);
+	}
+	
+	//starsComboBox.selectedIndex = 3;
+	//onStarSelected();
+	
+	//starsComboBox.addEventListener("change", onStarSelected);
+	
+	
+	
+	
+
+	
+	// inform the mass slider what the legal values are
+	initStarMassSlider.setRangeType("finite set", massValues);
+	
+	startVeilFade();
+	
+	// call reset when the data is loaded
+	reset();
+}
+
+
+

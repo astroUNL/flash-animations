@@ -1,0 +1,23 @@
+Just drag the "drawPhaseDisc Function" clip to the library to use the following function:</p>
+<pre>
+MovieClip.prototype.drawPhaseDisc = function(definition, optionsObj) {
+	// definition - the desired phase can be given in two ways:
+	//		- if 'definition' is a number it is assumed to be the phase angle in degrees;
+	//		the phase angle is the angle between the observer and illumination directions
+	//		as measured CCW from the the observer direction (e.g. an angle of 90° means
+	//		that the right half appears illuminated, ie. first quarter)
+	//		- if 'definition' is an object with x0, y0, x1, y1, x2, and y2 properties the function
+	//		will calculate the phase angle assuming that these are the screen coordinates for the
+	//		illuminator, observer, and observed body respectively; that is, the disc will be drawn
+	//		for an observer at body 1 looking at body 2, being illuminated by body 0
+	// possible properties for the optionsObj object (all optional):
+	//		radius - disc radius (default 70)
+	//		lightColor = the color for the illuminated part of the disc (default 0xe0e0e0)
+	//		darkColor = the color for the unilluminated part of the disc (default 0x404040)
+	//		x, y - the coordinates for the center of the disc (defaults are 0, 0)
+	//		lineThickness, lineColor, lineAlpha - the outline style (defaults are 1, 0x202020, and 0)
+	//		doClear - boolean specifies whether to clear the mc before drawing (default true)
+	// note: the function returns the phase angle in degrees in the range [0, 360) - this may be
+	// useful when giving object positions for the definition
+</pre>
+<p>

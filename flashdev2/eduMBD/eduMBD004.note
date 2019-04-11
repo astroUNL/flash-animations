@@ -1,0 +1,44 @@
+You may find <a href="eduMBD/eduMBD_check.html">this editor</a> useful for determing values to use. Documentation:
+</p>
+<p>
+The movie can be embedded at any size, although if it is too small the axis titles will be cropped. A reasonable minimum size is 320×225.
+</p>
+<p>
+The following are general settings. All are optional.
+</p>
+<ul>
+<li><code>maxSpeed</code> - This property specifies the right limit of the x-axis. The default is '1000'.</li>
+<li><code>axesColor</code> - This is the color used for the axes, including tickmarks and labels. The default is '000000'.</li>
+<li><code>defaultTemp</code> - This is the temperature used for a curve if the temperature is not specified. The default is '300'.</li>
+<li><code>defaultMass</code> - This is the mass used for a curve if the mass is not defined. The default is '32'.</li>
+<li><code>defaultLabel</code> - This property determines what label (if any) is used for a curve if a label has not been individually specified. It should be one of the following values: 'letter', 'number', or 'none'. The first two options will cause each curve to be labelled with a unique letter or number, as in a multiple choice question. The default is 'none'.</li>
+</ul>
+<p>
+Curves can be added by using the following properties, where <code>X</code> is the curve number, which should start at 1 and go consecutively. At least one of <code>massX</code> or <code>tempX</code> must be defined; all the other properties are optional. 
+</p>
+<ul>
+<li><code>massX</code> - The mass for the curve. If left undefined <code>defaultMass</code> will be used.</li>
+<li><code>tempX</code> - The temperature for the curve. If left undefined <code>defaultTemp</code> will be used.</li>
+<li><code>labelX</code> - The label used for curve. If left undefined the label used will depend on the value of <code>defaultLabel</code>.</li>
+<li><code>colorX</code> - This is the color of the curve's line as well as the fill beneath it. The default value depends on the curve number. By default the curves are colored blue, yellow, green, and red.</li>
+<li><code>labelColorX</code> - This specifies the color used for the label text. The default value depends on the curve number. By default the curves are colored blue, yellow, green, and red.</li>
+<li><code>fillAlphaX</code> - This is the alpha of the fill beneath the curve. The default is '30'.</li>
+<li><code>lineAlphaX</code> - This specifies the alpha of the curve's line. The default is '100'.</li>
+<li><code>lineThicknessX</code> - This specifies the thickness of the curve's line. The default is '1'.</li>
+</ul>
+<p>
+Note that masses (including <code>defaultMass</code>) can also be set with the following strings (case is important). The mass used is given in parentheses.
+</p>
+<ul>
+<li>'Xe' (131)</li>
+<li>'CO2' (44)</li>
+<li>'O2' (32)</li>
+<li>'N2' (28)</li>
+<li>'H2O' (18)</li>
+<li>'NH3' (17)</li>
+<li>'CH4' (16)</li>
+<li>'He' (4)</li>
+<li>'H2' (2)</li>
+</ul>
+<p>
+If you specify a curve's mass using one of these strings, and <code>defaultLabel</code> is 'none', and <code>labelX</code> is undefined, then the curve's label will be the molecular formula for the gas.

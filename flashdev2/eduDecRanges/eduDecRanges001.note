@@ -1,0 +1,17 @@
+This component has two required flashvars parameters:</p>
+
+<ul>
+<li>lat - the observer's latitude</li>
+<li>type - the band type, 0 for never rise, 1 for rise and set, and 2 for never set</li>
+</ul>
+
+<p>Optional parameters are:</p>
+
+<ul>
+<li>bandColor - the band color in hexadecimal; default is "e06060" (reddish)</li>
+<li>bandAlpha - the alpha of the band; default is 20</li>
+<li>viewerAz - azimuth of the initial viewer perspective; default is 210</li>
+<li>viewerAlt - altitude of the initial viewer perspective; this number should be greater than 7&deg;; default is 30</li>
+</ul>
+
+<p>

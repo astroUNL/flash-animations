@@ -1,0 +1,13 @@
+The html code for embedding this file is:
+<br><br>
+<code>
+&lt;OBJECT classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000"
+ codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,0,0"
+ WIDTH="300" HEIGHT="310" id="sunPathDiagram003" ALIGN=""&gt;
+&lt;PARAM NAME=FlashVars VALUE="str1=A&str2=B&str3=C&lat=41&initAz=240&initAlt=35"&gt;
+&lt;PARAM NAME=movie VALUE="http://physics.unl.edu/~astrodev/flashdev2/sunPathDiagram/sunPathDiagram003.swf"&gt; &lt;PARAM NAME=quality VALUE=high&gt; &lt;PARAM NAME=bgcolor VALUE=#000000&gt; &lt;EMBED src="http://physics.unl.edu/~astrodev/flashdev2/sunPathDiagram/sunPathDiagram003.swf" quality=high bgcolor=#000000  WIDTH="300" HEIGHT="310" NAME="sunPathDiagram003" ALIGN=""
+ TYPE="application/x-shockwave-flash" PLUGINSPAGE="http://www.macromedia.com/go/getflashplayer"&gt;&lt;/EMBED&gt;
+&lt;/OBJECT&gt;
+</code>
+<br><br>
+where <code>str1</code>, <code>str2</code>, and <code>str3</code> are the labels for the summer, equinox, and winter sun paths, respectively. <code>lat</code> is the latitude for the stickfigure. <code>initAlt</code> and <code>initAz</code> are optional parameters that define the orientation of the celestial sphere on initialization.

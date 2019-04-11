@@ -1,0 +1,4 @@
+Example parameters to draw a figure-eight are:
+</p>
+<pre>{width: 200, height: 60, a: 1, b: 2, delta: 1.5707963267949}</pre>
+<p>

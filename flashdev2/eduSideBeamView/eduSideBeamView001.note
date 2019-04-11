@@ -1,0 +1,1 @@
+This component takes two flashvars parameters: dec and lat, which define the declination of the sun and latitude of the observer. Both should be expressed as angles between -90 and 90.

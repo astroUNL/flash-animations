@@ -1,0 +1,9 @@
+Now the movie will look for the images file in the following locations:
+</p>
+<ul>
+<li>transitimages.swf</li>
+<li>animations/coordsmotion/transitimages.swf</li>
+<li>transitImages.swf</li>
+<li>animations/coordsmotion/transitImages.swf</li>
+</ul>
+<p>

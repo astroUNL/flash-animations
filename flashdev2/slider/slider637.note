@@ -1,0 +1,19 @@
+Expanded the list of font characters that are embedded by default (characters like * and + and < were not getting embedded). The default font load is now about 10 Kb (up from 8 Kb). Of this, 1.5 Kb is in Verdana Italic for the value field and the remaining 8.5 Kb is in Verdana for the label and unit fields.</p>
+
+<p>You can still specify your own fonts movieclip; however, the 10 Kb of Verdana will still be embedded unless you remove or de-export the default fonts movieclip. Alternatively, you can edit the default fonts movieclip directly to include just the fonts you need.</p>
+
+<p>The embedded font characters now include all characters on the keyboard plus °±µ·×÷…‹›. The alt-xxxx sequences for entering these extra charaters are:</p>
+
+<ul>
+<li>° <code>0176</code></li>
+<li>± <code>0177</code></li>
+<li>µ <code>0181</code></li>
+<li>· <code>0183</code></li>
+<li>× <code>0215</code></li>
+<li>÷ <code>0247</code></li>
+<li>… <code>0133</code></li>
+<li>‹ <code>0139</code></li>
+<li>› <code>0155</code></li>
+</ul>
+
+<p>

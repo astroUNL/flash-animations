@@ -1,0 +1,8 @@
+The source path for this project needs to include
+codebase/ (for naap titlebar)
+and 
+projects/siderealSolarTime (for clock, day of year slider, and TimeMaster)
+
+The source path is set in File->Publish Settings, Flash tab, ActionScript 3.0 Settings (the "Settings" button), source path tab.
+
+To undo the dependency on siderealSolarTime, you can remove that folder from zodiacSimulator.fla's source path, and then copy the needed class files from that directory into the zodiacSimulator directory. Then you would effectively have two independent branches of the code.

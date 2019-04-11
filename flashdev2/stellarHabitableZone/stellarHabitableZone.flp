@@ -1,0 +1,20 @@
+﻿<flash_project name="stellarHabitableZone" version="1">
+    <project_file path="./SHZTimelineCursor.as" filetype="as" />
+    <project_file path="./SHZTimeline.as" filetype="as" />
+    <project_file path="./stellarHabitableZone.fla" filetype="fla" profile="" def_file="true" />
+    <project_file path="./SHZDiagramRefOrbits.as" filetype="as" />
+    <project_file path="./SHZDiagramPlanet.as" filetype="as" />
+    <project_file path="./SHZDiagramGrid.as" filetype="as" />
+    <project_file path="./SHZDiagram.as" filetype="as" />
+    <project_file path="./CubicEaser.as" filetype="as" />
+    <project_file path="./SHZDiagramZone.as" filetype="as" />
+    <project_file path="./SHZDiagramStar.as" filetype="as" />
+    <project_file path="./SHZDiagramScalebar.as" filetype="as" />
+    <project_file path="./SHZHabitabilityPlot.as" filetype="as" />
+    <project_file path="./SHZHRDiagram.as" filetype="as" />
+    <project_file path="./ProtoSliderLogic.as" filetype="as" />
+    <project_file path="./ProtoSimpleSlider.as" filetype="as" />
+    <project_file path="./SHZSystemHistory.as" filetype="as" />
+    <project_file path="./SHZSystemHistoryTag.as" filetype="as" />
+    <project_file path="./ProtoSimpleSliderRunSpeed.as" filetype="as" />
+</flash_project>

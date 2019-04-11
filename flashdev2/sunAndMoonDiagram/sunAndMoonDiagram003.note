@@ -1,0 +1,9 @@
+changes:
+</p>
+<ul>
+<li>added an event handler: <code>onViewerDirectionChanged</code></li>
+<li>added the function <code>getViewerDirection</code></li>
+<li>added the functions <code>getSunLocations</code> and <code>getMoonLocations</code></li>
+</ul>
+<p>
+<a href="sunAndMoonDiagram/sunAndMoonDiagramReadme.html">updated documentation</code>

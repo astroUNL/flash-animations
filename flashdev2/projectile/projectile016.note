@@ -1,0 +1,8 @@
+changes:
+</p>
+<ul>
+<li>added title bar with about, help, and reset options</li>
+<li>relabelled the "reset" button to "start over" so as not to be confused with the reset option on the title bar</li>
+<li>added a pause at peak checkbox</li>
+</ul>
+<p>
