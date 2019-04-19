@@ -7,6 +7,7 @@ package {
 	import flash.utils.Timer;
 	import flash.utils.getTimer;
 	import flash.events.TimerEvent;
+	import flash.events.Event;
 	
 	
 	public class EarthOrbitPlot extends Sprite {
@@ -133,7 +134,10 @@ package {
 		protected var _readoutEaser:CubicEaser;
 		protected var _timer:Timer;
 		
+
 		public function EarthOrbitPlot() {
+			
+			addEventListener(Event.ADDED_TO_STAGE, onAddedToStage);
 			
 			_readoutEaser = new CubicEaser(0);
 			
@@ -152,12 +156,6 @@ package {
 			
 			_specialPointsSP = new Sprite();
 			addChild(_specialPointsSP);
-			
-			stage.addEventListener(MouseEvent.MOUSE_MOVE, onMouseMove);
-			
-			_timer = new Timer(30);
-			_timer.addEventListener(TimerEvent.TIMER, onTimerEvent);
-			_timer.start();
 			
 			addXTickmark(6378e3);
 			addXTickmark(10000e3);
@@ -181,6 +179,15 @@ package {
 			
 			update();
 		}
+		
+		protected function onAddedToStage(evt:Event):void {
+			stage.addEventListener(MouseEvent.MOUSE_MOVE, onMouseMove);
+			
+			_timer = new Timer(30);
+			_timer.addEventListener(TimerEvent.TIMER, onTimerEvent);
+			_timer.start();
+		}
+		
 		
 		protected var _yTickmarksList:Array = [];
 		
