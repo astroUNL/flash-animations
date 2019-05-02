@@ -1,0 +1,22 @@
+history.txt
+2019-1 Patch
+May 1, 2019
+
+This file contains a list of projects that have had Patch 2019-1 applied. I (CMS) had fixed and updated many animations for the ClassAction AIR app before I formulated the changes as a patch, so some animations have been fixed without being 'patched'.
+
+*: replaced ComboBox symbol instead of code. It was with the binSys project that I first ran into trouble and then switched to replacing only the code.
+
+ClassAction Module			Animation Name					flash-animations Project Folder			ClassAction Animation File			Date
+------------------			--------------					-------------------------------			--------------------------			----
+* Stellar Properties			HR Explorer (NAAP)				flashdev2/hrExplorer 				stellarprops/hrexplorer.swf			4/30/19	
+* Coordinates and Motions		Sidereal Time and Hour Angle Demonstrator	flashdev2/siderealTimeAndHourAngleDemo 		200level/siderealTimeAndHourAngleDemo.swf	4/30/19
+* Coordinates and Motions		Antipodes Explorer				flashdev2/antipodesExplorer			coordsmotions/antipodesexplorer.swf		5/1/19
+* Coordinates and Motions		Coordinate Systems Comparison			flashdev2/celHorComp				coordsmotions/celhorcomp.swf			5/1/19
+* Coordinates and Motions		Ecliptic Simulator				tt/seasonSim					coordsmotions/seasonsim.swf			5/1/19
+Binary and Variable Stars		Eclipsing Binary Simulator			flashdev2/binSys				binaryvariablestars/eclipsingbinarysim.swf	5/1/19
+Coordinates and Motions			Union Seasons Demonstrator			flashdev2/transitMovie				coordsmotions/transitmovie.swf			5/1/19
+Coordinates and Motions			Azimuth/Altitude Demonstrator			flashdev2/altAzDemo				coordsmotions/altazimuth.swf			5/1/19
+Coordinates and Motions			Celestial-Equatorial (RA/Dec) Demonstrator	flashdev2/celestialEquatorialDemo		coordsmotions/radecdemo.swf			5/1/19
+Coordinates and Motions			Sun Motions Demonstrator			flashdev2/sunMotions				coordsmotions/sunmotions.swf			5/1/19
+Coordinates and Motions			Seasons Simulator (NAAP)			flashdev2/eclipticSimulator			coordsmotions/eclipticsimulator.swf		5/1/19
+Coordinates and Motions			Daylight Hours Explorer				flashdev2/daylightHoursExplorer			coordsmotions/daylighthoursexplorer.swf		5/1/19
