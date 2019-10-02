@@ -4,7 +4,9 @@ The following animations/simulations need to be fixed for the NAAP Air app. Some
 
 Two common issues:
 - drop-downs not working correctly when scaled, even in patched sims (although some patched sims do work *1)
+	+ Fix: apply formal "Patch 2019-1" (some sims were incompletely patched before this patch was developed).
 - items added to the stage programmatically with properties will sometimes have incorrect values for the first item added
+	+ Fix: reassign the property value in the first frame
 
 Sim						File				Notes
 ---						----				-----
@@ -30,6 +32,3 @@ Supernova Light Curve Fitting Explorer		snCurveExplorer007		needs patching; drop
 Milky Way Habitability Explorer			milkyWayHabitability002		needs patching
 
 *1 - note: the animate drop-down in the Rotating Sky Explorer (celHorComp039-B) works when zoomed; filters also works; hrExplorer013-B works; binSys098-B works
-
-
-
