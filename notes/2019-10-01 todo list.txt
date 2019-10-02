@@ -1,0 +1,35 @@
+2019-10-01 todo list.txt
+
+The following animations/simulations need to be fixed for the NAAP Air app. Some items are also used by the ClassAction Air app and will need to be replaced there after updating.
+
+Two common issues:
+- drop-downs not working correctly when scaled, even in patched sims (although some patched sims do work *1)
+- items added to the stage programmatically with properties will sometimes have incorrect values for the first item added
+
+Sim						File				Notes
+---						----				-----
+Ptolemaic System Simulator			ptolemaic023			needs patching
+Planetary Configurations Simulator		configurationsSimulator044-B	already patched; drop-downs don't select in Orbit Sizes panel (Win10)
+Rotating Sky Explorer				celHorComp039-B			already patched; constellation drop-down doesn't work when scaled (Win10) *1
+Motions of the Sun Simulator			sunMotions068-B			already patched; "Jun" month label appears in diagram instead of "Jan" (Win10)
+Planetary Orbit Simulator			kepler089-B			already patched; parameters drop-down doesn't work when scaled (Win10) *1; "Mercury" diagram label doesn't appear (Win10)
+Lunar Phase Simulator				lunar_applet040-B		already patched; phase drop-down doesn't work when scaled (Win10) *1; language selection doesn't work when scaled (Win10)
+Moon Phases and the Horizon Diagram		positionsDemonstrator011-B	already patched; position label '0' appears as '8'
+Blackbody Curves and Filters Explorer		bbExplorer026-B			already patched; color index drop-downs don't work when scaled (Win10)
+Projectile Motion Simulator			projectile016			needs patching
+Gas Retention Simulator				gasRetentionSimulator022	needs patching; drop-down doesn't work when scaled (Win10)
+Gas Retention Plot				gasRetentionPlot015		needs patching
+Exoplanet Radial Velocity Simulator		radialVelocitySimulator012-B	already patched; preset drop-down doesn't work when scaled (Win10)
+Exoplanet Transit Simulator			transitSimulator017-B		already patched; preset drop-down doesn't work when scaled (Win10)
+Blink Comparator Simulator			...				crosshairs misbehave when scaled (Win10)
+Variable Star Photometry Analyzer		...				crosshairs misbehave when scaled (Win10)
+Parallax Explorer				parallaxExplorer009		needs patching; drop-down doesn't work when scaled (Win10)
+Spectroscopic Parallax Simulator		spectroParallax013		needs patching; 
+HR Diagram Star Cluster Fitting Explorer	clusterFittingExplorer009	needs patching; drop-down doesn't work when scaled (Win10); typing changes drop-down selection (Win10) 
+Supernova Light Curve Fitting Explorer		snCurveExplorer007		needs patching; drop-down doesn't work when scaled (Win10); typing changes drop-down selection (Win10)
+Milky Way Habitability Explorer			milkyWayHabitability002		needs patching
+
+*1 - note: the animate drop-down in the Rotating Sky Explorer (celHorComp039-B) works when zoomed; filters also works; hrExplorer013-B works; binSys098-B works
+
+
+
