@@ -1,6 +1,6 @@
 readme.txt
-2019-1 Patch
-May 1, 2019
+Applying the 2019-1 Patch and making other fixes
+2019-10-02
 
 
 === Summary ===
@@ -34,9 +34,13 @@ Patching the dialog windows:
 Other fixes:
 - Replace any getVersion() function calls with the System.capabilities.version property. This function is used in many About dialogs.
 - Replace any remaining Stage.width/height usages with _root.__Stage.width/height.
-- Search for hitTest calls -- these will probably not work correctly when the Flash movie is loaded and scaled. If there's a problem, a custom hitTest replacement may be necessary.
+- Search for hitTest calls -- these will probably not work correctly when the Flash movie is loaded and scaled. If there's a problem, a custom hitTest replacement may be necessary. Examples:
+	+ The Flash MX ComboBox (search for "hitCheck" in the combobox code in the 2019-1 patch).
+	+ The constellations selection menu in the Rotating Sky Explorer (celHorComp039-C).
 - If the loaded SWF loads another SWF, it may be necessary to change the call from the target.loadMovie(url) syntax to the loadMovie(url, target) syntax.
-- Sometimes programmatically attached labels do not always initialize correctly (particularly the first label attached). This seems to happen if the value of the label is passed via an initObject, and the text field has this variable assigned to it. The fix is to reassign the value after attaching.
+- Sometimes programmatically attached labels do not always initialize correctly (particularly the first label attached). This seems to happen if the value of the label is passed via an initObject, and the text field has this variable assigned to it. The fix is to reassign the value after attaching. Examples:
+	+ The celestial sphere's month label in the Motions of the Sun sim (see "Celestial Sphere Stuff/Month Label" in sunMotions068-C.fla).
+	+ The position label in the Moon Phases and the Horizon Diagram sim (see positionsDemonstrator011-C.fla).
 - Be careful about increasing the targeted Flash Player (e.g. switching from publishing for Flash Player 6 to Flash Player 10). This can eliminate some bugs, but introduce others.
 
 Other optional changes:
