@@ -1,5 +1,11 @@
 
+*.orig
+._*
+._.DS_Store
 .DS_Store
 Thumbs.db
 _notes
+.hg
+.hgignore
+.svn
 
