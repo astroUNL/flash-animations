@@ -1,0 +1,16 @@
+This folder contains code for some major  projects:
+
+ClassAction v2 (astroUNL/classaction/browser)
+kepler
+
+Note: code in the kepler, astroUNL, and edu folders was developed here. The other folders are code libraries that I downloaded from other sources to solve a task (like generating jpgs or making zips).
+
+Some of this code is also used by other projects, for example, the siderealSolarTime simulator. Here's how that works:
+
+Go to File->Publish Settings. Go to the Flash tab. Press the Settings button in the upper right (it's next to "ActionScript 3.0". In the "Source path" tab there is a list of all the places the compiler looks for code to include. In the case of the siderealSolarTime project you'll see that the source path points to the codebase directory on my machine (I suppose you'll have to change this if you develop on a different machine).
+
+In some of my earliest AS3 projects (e.g. the variable star labs) I put code at 
+C:\Program Files\Adobe\Adobe Flash CS3\en\Configuration\ActionScript 3.0\Classes\edu\unl\astro
+I recognize now that this is an awkward place to put it, so I copied that directory to this directory.
+
+You may notice that the kepler and astroUNL directories are backed-up using the Mercurial CVS. If you want to access previous versions of this code you can use a program such as TortoiseHg to access the archive. In any case, the version that you can see is the latest working one (you don't need to use any cvs if you intend to continue development without it).
