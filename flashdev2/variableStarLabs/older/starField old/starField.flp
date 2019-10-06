@@ -1,0 +1,7 @@
+﻿<flash_project name="starField" version="1">
+    <project_file path="./starField.fla" filetype="fla" profile="" def_file="true" />
+    <project_file path="./StarField.as" filetype="as" />
+    <project_file path="./Aperture.as" filetype="as" />
+    <project_file path="./Box.as" filetype="as" />
+    <project_file path="./PixelDisplay.as" filetype="as" />
+</flash_project>

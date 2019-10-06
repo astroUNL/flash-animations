@@ -1,0 +1,4 @@
+﻿<flash_project name="CCDMiniSim" version="1">
+    <project_file path="./CCDMiniSim.fla" filetype="fla" profile="" def_file="true" />
+    <project_file path="../../../../Program Files/Adobe/Adobe Flash CS3/en/Configuration/ActionScript 3.0/Classes/edu/unl/astro/starField/GammaTransferFunction.as" filetype="as" />
+</flash_project>

@@ -1,0 +1,15 @@
+getStatistics(pMask:IPixelMask):Object
+This function is used to get the average pixel counts for a region. Given a pixel mask object, the function returns an object with the following properties:
+	totalCounts - the sum of counts for all the pixels covered by the mask
+	totalPixels - the number of pixels actually in the field covered by the mask
+	clipped - a Boolean indicating whethere there are pixels that are part of the mask
+		but not part of the field (ie. the mask is over the edge of the image)
+	average - the average counts per pixel covered by the mask: totalCounts/totalPixels 
+
+getPixelColors(rect:Rectangle):Array
+This function returns a two dimensional array of uint pixel colors for the specified region. The region includes the top and left boundaries of the pixel, but not the right and bottom boundaries.
+
+getPixelInfo(pt:Point):Object
+This function returns the counts and color for a given pixel. The object returned by the function has the following properties:
+	counts:int - the counts for the pixel, an integer between 0 and peakValue (inclusive) for pixel in the field. For pixels outside the bounds of the field the value is -1.
+	color:uint - the color of the pixel according to the lookup table.

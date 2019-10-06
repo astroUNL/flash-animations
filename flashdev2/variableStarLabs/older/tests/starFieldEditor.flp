@@ -1,0 +1,4 @@
+﻿<flash_project name="starFieldEditor" version="1">
+    <project_file path="./starFieldTest001.fla" filetype="fla" profile="" def_file="true" />
+    <project_file path="./StarField.as" filetype="as" />
+</flash_project>

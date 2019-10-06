@@ -1,0 +1,65 @@
+<settings>
+  <fieldParameters noiseMean="0" noiseSigma="1000" saturationMagnitude="3" psfRadius="6"/>
+  <starsList>
+    <pulsatingStar centerMagnitude="3.5" prototypeName="PZ_Aql" x="145" y="92"/>
+    <pulsatingStar centerMagnitude="3.5" prototypeName="RT_Mus" x="244" y="92"/>
+    <eclipsingBinary peakMagnitude="3.5" prototypeName="T_LMi" x="121" y="191"/>
+    <eclipsingBinary peakMagnitude="3.5" prototypeName="V526_Sgr" x="144" y="202"/>
+    <eclipsingBinary peakMagnitude="3.5" prototypeName="TW_Cas" x="189" y="210"/>
+    <eclipsingBinary peakMagnitude="3.5" prototypeName="V477_Cyg" x="218" y="206"/>
+    <eclipsingBinary peakMagnitude="3.5" prototypeName="CW_CMa" x="251" y="193"/>
+    <eclipsingBinary peakMagnitude="3.5" prototypeName="EK_Cep" x="283" y="177"/>
+    <constantStar magnitude="3.5" x="196" y="132"/>
+  </starsList>
+  <observationsList>
+    <observation epoch="0.347142" noiseSeed="566730450"/>
+    <observation epoch="0.989751" noiseSeed="429266618"/>
+    <observation epoch="1.084902" noiseSeed="579346216"/>
+    <observation epoch="1.174125" noiseSeed="1955581914"/>
+    <observation epoch="1.305143" noiseSeed="420176062"/>
+    <observation epoch="1.656106" noiseSeed="1209191730"/>
+    <observation epoch="0.269743" noiseSeed="1066904615"/>
+    <observation epoch="0.798855" noiseSeed="1398982404"/>
+    <observation epoch="0.072623" noiseSeed="175609497"/>
+    <observation epoch="2.184329" noiseSeed="1184453141"/>
+    <observation epoch="2.874694" noiseSeed="1491428096"/>
+    <observation epoch="2.987927" noiseSeed="1346130497"/>
+    <observation epoch="3.065293" noiseSeed="1108206587"/>
+    <observation epoch="3.351043" noiseSeed="1519923784"/>
+    <observation epoch="3.600926" noiseSeed="446119981"/>
+    <observation epoch="3.702006" noiseSeed="2013997288"/>
+    <observation epoch="7.702006" noiseSeed="951644702"/>
+    <observation epoch="7.636702" noiseSeed="1317675133"/>
+    <observation epoch="8.594735" noiseSeed="367309201"/>
+    <observation epoch="8.68959" noiseSeed="1584503667"/>
+    <observation epoch="8.772588" noiseSeed="190901206"/>
+    <observation epoch="8.909238" noiseSeed="1098083717"/>
+    <observation epoch="15.129343" noiseSeed="1824748288"/>
+    <observation epoch="14.438978" noiseSeed="2054019539"/>
+    <observation epoch="14.313888" noiseSeed="684764278"/>
+    <observation epoch="13.998496" noiseSeed="990571120"/>
+    <observation epoch="13.415138" noiseSeed="359045817"/>
+    <observation epoch="13.349333" noiseSeed="68772624"/>
+    <observation epoch="13.325323" noiseSeed="579782470"/>
+    <observation epoch="14.658329" noiseSeed="1557266152"/>
+    <observation epoch="30.100989" noiseSeed="1615401374"/>
+    <observation epoch="29.684221" noiseSeed="1989475454"/>
+    <observation epoch="29.618416" noiseSeed="2062455214"/>
+    <observation epoch="29.511407" noiseSeed="938475510"/>
+    <observation epoch="29.338297" noiseSeed="525496698"/>
+    <observation epoch="28.642004" noiseSeed="1131575221"/>
+    <observation epoch="28.558709" noiseSeed="1231677093"/>
+    <observation epoch="28.736859" noiseSeed="1376532844"/>
+    <observation epoch="30.182802" noiseSeed="1451908635"/>
+    <observation epoch="29.956632" noiseSeed="1038008649"/>
+    <observation epoch="29.141177" noiseSeed="148957862"/>
+    <observation epoch="50.493589" noiseSeed="840856425"/>
+    <observation epoch="50.600597" noiseSeed="1603406214"/>
+    <observation epoch="50.891979" noiseSeed="154001231"/>
+    <observation epoch="51.195514" noiseSeed="919187251"/>
+    <observation epoch="51.332165" noiseSeed="1615122341"/>
+    <observation epoch="51.439173" noiseSeed="1490949244"/>
+    <observation epoch="51.480672" noiseSeed="1987468496"/>
+    <observation epoch="51.534027" noiseSeed="1423078653"/>
+  </observationsList>
+</settings>

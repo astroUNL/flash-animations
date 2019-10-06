@@ -1,0 +1,49 @@
+
+properties
+
+locked:Boolean
+- when locked the component will not update to reflect changes (in fact it is invisible when locked); after being unlocked the component will update and return to visibility; see also the lock() and unlock() functions
+
+saturationMagnitude:Number
+- the magnitude such that the star will have saturated pixels, assuming the psf has a 
+
+bitDepth:uint
+- the bit depth of the simulated star field, which should be an integer between 2 and 16, inclusive
+
+peakValue:uint (read-only)
+- the maximum value allowed given the bit depth: 2^bitDepth - 1
+
+mappingMode:String
+- the mapping mode used to transfer between the values (ie. counts) and the colors seen on the screen; valid modes
+are StarField.LINEAR and StarField.GAMMA
+
+invertMapping:Boolean
+- used to specify whether low values correspond to dark or light colors (inversion does not apply to custom mapping keys)
+
+gamma:Number
+- specifies the gamma to use in the gamma mapping mode (the setting has no effect otherwise); gamma must a finite number greater than zero (typical values would be between 1.8 and 3)
+
+epoch:Number
+- specifies the time associated with the star field frame, causing any time varying phenomenon like variable stars to change in appearance; note that noiseSeed takes a new random value every time epoch changes; to avoid this use the setEpochAndNoiseSeed function
+
+noiseSeed:uint
+- specifies the seed used to generate the noise in the star field; noiseSeed must be an integer between 1 and 0x7ffffffe inclusive
+
+
+
+
+
+
+methods
+
+lock():void, unlock():void
+- these functions can be used to improve efficiency when making multiple changes to the star field; when locked the component will not update to reflect changes (in fact it is invisible when locked); after unlocking the component will update and return to visibility; see also the locked property, which accomplishes the same thing as these functions
+ 
+addStar(star:IStar):void
+- adds a star to the star field
+
+removeStar(star:IStar):Boolean
+- removes a star that was previouly attached with addStar; returns true if the star was found and removed, false if the star was not found in the star field
+
+removeAllStars():void
+- removes all stars that were attached to the star field

@@ -1,0 +1,8 @@
+﻿<flash_project name="interactive1" version="1">
+    <project_file path="./PixelDisplay.as" filetype="as" />
+    <project_file path="../../../../Program Files/Adobe/Adobe Flash CS3/en/Configuration/ActionScript 3.0/Classes/edu/unl/astro/starField/PixelMask.as" filetype="as" />
+    <project_file path="./DraggableBox.as" filetype="as" />
+    <project_file path="./DraggableAperture.as" filetype="as" />
+    <project_file path="./PixelMaskProxy.as" filetype="as" />
+    <project_file path="./photometrySimulator.fla" filetype="fla" profile="" def_file="true" />
+</flash_project>

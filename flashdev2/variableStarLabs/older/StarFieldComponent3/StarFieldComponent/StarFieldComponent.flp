@@ -1,0 +1,18 @@
+﻿<flash_project name="StarFieldComponent" version="1">
+    <project_folder name="Stars" expanded="true">
+        <project_file path="./edu/unl/astro/starField/Star.as" filetype="as" />
+        <project_file path="./edu/unl/astro/starField/EclipsingBinary.as" filetype="as" />
+        <project_file path="./edu/unl/astro/starField/PulsatingStar.as" filetype="as" />
+    </project_folder>
+    <project_folder name="Helpers" expanded="false">
+        <project_file path="./edu/unl/astro/starField/Aperture.as" filetype="as" />
+        <project_file path="./edu/unl/astro/starField/Box.as" filetype="as" />
+        <project_file path="./edu/unl/astro/starField/ObservationsPlot.as" filetype="as" />
+        <project_file path="./edu/unl/astro/starField/PixelDisplay.as" filetype="as" />
+    </project_folder>
+    <project_file path="./starField.fla" filetype="fla" profile="" def_file="true" />
+    <project_file path="./edu/unl/astro/starField/StarField.as" filetype="as" />
+    <project_file path="./edu/unl/astro/starField/IPointSpreadFunction.as" filetype="as" />
+    <project_file path="./edu/unl/astro/starField/AiryDisc.as" filetype="as" />
+    <project_file path="./edu/unl/astro/starField/IStar.as" filetype="as" />
+</flash_project>

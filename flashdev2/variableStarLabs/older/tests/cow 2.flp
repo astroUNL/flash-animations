@@ -1,0 +1,5 @@
+﻿<flash_project name="starFieldTest" version="1">
+    <project_file path="./ApertureMask.as" filetype="as" />
+    <project_file path="./StarField.as" filetype="as" />
+    <project_file path="./starFieldTest001.fla" filetype="fla" profile="" def_file="true" />
+</flash_project>

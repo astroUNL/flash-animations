@@ -1,0 +1,5 @@
+﻿<flash_project name="interactive3" version="1">
+    <project_file path="./interactive3.fla" filetype="fla" profile="" def_file="true" />
+    <project_file path="./StarHalo.as" filetype="as" />
+    <project_file path="./DeltaMagOverlay.as" filetype="as" />
+</flash_project>

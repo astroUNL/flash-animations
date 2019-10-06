@@ -1,0 +1,44 @@
+<settings>
+  <fieldParameters noiseMean="0" noiseSigma="1000" saturationMagnitude="3" psfRadius="5"/>
+  <starsList>
+	<pulsatingStar centerMagnitude="4" prototypeName="del_Cep" x="203" y="182"/>
+	<pulsatingStar centerMagnitude="3.9" prototypeName="PZ_Aql" x="200" y="141"/>
+	<eclipsingBinary peakMagnitude="3.5" prototypeName="T_LMi" x="297" y="112"/>
+	<eclipsingBinary peakMagnitude="4" prototypeName="EK_Cep" x="293" y="211"/>
+	<constantStar magnitude="4" x="93" y="140"/>
+	<constantStar magnitude="4.5" x="103" y="204"/>
+	<constantStar magnitude="3.5" x="99" y="105"/>
+  </starsList>
+  <observationsList>
+	<observation epoch="1" noiseSeed="867069425"/>
+	<observation epoch="2" noiseSeed="75005227"/>
+	<observation epoch="2.5" noiseSeed="1227582161"/>
+	<observation epoch="3.2" noiseSeed="1081372943"/>
+	<observation epoch="3.3" noiseSeed="1028593948"/>
+	<observation epoch="3.5" noiseSeed="360403621"/>
+	<observation epoch="3.6" noiseSeed="1980100406"/>
+	<observation epoch="3.8" noiseSeed="7629817"/>
+	<observation epoch="4.2" noiseSeed="338298207"/>
+	<observation epoch="4.5" noiseSeed="936476302"/>
+	<observation epoch="4.8" noiseSeed="1433701476"/>
+	<observation epoch="5" noiseSeed="802272051"/>
+	<observation epoch="5.01" noiseSeed="894274585"/>
+	<observation epoch="5.5" noiseSeed="207390543"/>
+	<observation epoch="7" noiseSeed="1889409733"/>
+	<observation epoch="7.05" noiseSeed="1687439415"/>
+	<observation epoch="7.08" noiseSeed="1121222308"/>
+	<observation epoch="7.14" noiseSeed="684783001"/>
+	<observation epoch="7.3" noiseSeed="1921953434"/>
+	<observation epoch="7.5" noiseSeed="709939757"/>
+	<observation epoch="7.6" noiseSeed="1864570947"/>
+	<observation epoch="8" noiseSeed="1076045624"/>
+	<observation epoch="8.2" noiseSeed="581218317"/>
+	<observation epoch="9" noiseSeed="1361815318"/>
+	<observation epoch="9.3" noiseSeed="529710913"/>
+	<observation epoch="9.4" noiseSeed="1019402134"/>
+	<observation epoch="9.5" noiseSeed="1098182030"/>
+	<observation epoch="9.6" noiseSeed="1881768575"/>
+	<observation epoch="9.8" noiseSeed="115762730"/>
+	<observation epoch="9.9" noiseSeed="1573972245"/>
+  </observationsList>
+</settings>

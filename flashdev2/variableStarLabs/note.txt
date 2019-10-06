@@ -1,0 +1,4 @@
+Remember, some of these projects link to code at
+C:\Program Files\Adobe\Adobe Flash CS3\en\Configuration\ActionScript 3.0\Classes\edu\unl\astro
+
+For safety's sake, I copied (21 oct 10) the code at this location to the codebase directory.

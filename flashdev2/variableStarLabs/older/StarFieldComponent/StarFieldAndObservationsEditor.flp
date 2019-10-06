@@ -1,0 +1,6 @@
+﻿<flash_project name="StarFieldAndObservationsEditor" version="1">
+    <project_file path="./StarFieldAndObservationsEditor.fla" filetype="fla" profile="" def_file="true" />
+    <project_file path="./edu/unl/astro/starField/StarField.as" filetype="as" />
+    <project_file path="./StarDisc.as" filetype="as" />
+    <project_file path="./binSysLightcurve.fla" filetype="fla" profile="" />
+</flash_project>

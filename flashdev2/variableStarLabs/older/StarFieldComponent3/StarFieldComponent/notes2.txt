@@ -1,0 +1,96 @@
+
+new Star([settingsObject])
+
+Note that the component dispatches an event of type Star.STAR_CHANGED whenever any settable property (besides epoch) has changed. 
+
+x, y (type Number)
+- the x and y positions of the star in the field (note that at present the star field component considers only the integer part of the position)
+
+magnitude (type Number)
+- the magnitude of the star
+
+epoch (type Number)
+- the time (in days) that applies when reading any time property that changes in time (in the case of Star there are no such properties)
+
+loadSettings(settingsObj:Object):void
+- this function can be used to set several properties at once; any properties of settingObj that have the name and correct type of a valid property will be set
+
+
+
+
+Eclipsing Binary
+
+magnitude (read-only)
+- for an eclipsing binary the magnitude is read only and dependent on the epoch; use peakMagnitude to change the brightness of the star
+
+argument:Number
+- the argument of periastron, in degrees, also called longitude in other simulators
+
+inclination
+- in degrees
+
+eccentricity
+- the eccentricity of the orbit
+
+separation
+- the mean separation in solar radii
+
+phaseOffset
+- the offset of the curve, in days
+
+peakMagnitude
+- the magnitude of the binary when there are no eclipses
+
+mass1, mass2
+- the masses of the stars, in solar masses
+
+radius1, radius2
+- the radii of the stars, in solar radii
+
+temperature1, temperature2
+- the temperatures of the stars, in Kelvin degrees
+
+period (read-only)
+- the period of the system in days, which depends on the separation and star masses
+
+distanceModulus (read-only)
+- the difference between the absolute and apparent magnitudes of the system (
+
+
+
+		public static const SOLAR_MASS:Number = 1.98892e30; // in kg
+		public static const SOLAR_RADIUS:Number = 6.955e8; // in m
+		public static const PRESETS:Object = {TW_Cas: {argument: 0, inclination: 74.7, eccentricity: 0, separation: 8.17, mass1: 2.5, radius1: 2.0, temperature1: 10500, mass2: 1.1, radius2: 2.6, temperature2: 5400},
+											  V477_Cyg: {argument: 162.8, inclination: 85.66, eccentricity: 0.33, separation: 10.87, mass1: 1.9, radius1: 1.7, temperature1: 8730, mass2: 1.4, radius2: 1.5, temperature2: 6530},
+											  CW_CMa: {argument: 0, inclination: 83.3, eccentricity: 0, separation: 11.92, mass1: 2.6, radius1: 2.1, temperature1: 10800, mass2: 2.5, radius2: 1.9, temperature2: 10300},
+											  EK_Cep: {argument: 49.8, inclination: 89.16, eccentricity: 0.11, separation: 16.58, mass1: 2.0, radius1: 1.6, temperature1: 9000, mass2: 1.1, radius2: 1.3, temperature2: 5690},
+											  V526_Sgr: {argument: 254.8, inclination: 87.3, eccentricity: 0.22, separation: 10.43, mass1: 2.4, radius1: 1.9, temperature1: 10100, mass2: 1.8, radius2: 1.6, temperature2: 8450},
+											  T_LMi: {argument: 0, inclination: 86.3, eccentricity: 0, separation: 11.97, mass1: 2.3, radius1: 1.9, temperature1: 9860, mass2: 0.23, radius2: 2.4, temperature2: 5060}};
+
+
+
+
+
+Pulsating Star
+
+x
+y
+loadSettings()
+epoch
+magnitude (read-only)
+phaseOffset
+period
+functionUsed
+centerMagnitude
+fourierTermsList
+
+		public static const COSINE = "cos";
+		public static const SINE = "sin";
+		public static const PRESETS:Object = {del_Cep: {period: 5.366341, functionUsed: PulsatingStar.COSINE, actualCenterMagnitude: 3.988, fourierTermsList: [{A: 3.496E-01, phi: 2.491}, {A: 1.385E-01, phi: 3.084}, {A: 5.499E-02, phi: 3.811}, {A: 2.277E-02, phi: 4.083}, {A: 9.765E-03, phi: 4.709}]},
+											  RT_Mus: {period: 3.08617, functionUsed: PulsatingStar.COSINE, actualCenterMagnitude: 9.03, fourierTermsList: [{A: 0.331, phi: 0.0277}, {A: 0.131, phi: 4.13}, {A: 0.0503, phi: 2.24}, {A: 0.0416, phi: 6.16}]},
+											  AS_Per: {period: 4.972516, functionUsed: PulsatingStar.COSINE, actualCenterMagnitude: 9.760, fourierTermsList: [{A: 3.583E-01, phi: 2.468}, {A: 1.443E-01, phi: 3.084}, {A: 5.731E-02, phi: 3.650}, {A: 2.603E-02, phi: 3.695}, {A: 2.110E-02, phi: 4.625}]},
+											  S_Nor: {period: 9.75411, functionUsed: PulsatingStar.COSINE, actualCenterMagnitude: 6.4354, fourierTermsList: [{A: 0.2874, phi: 3.1842}, {A: 0.0191, phi: 4.6142}, {A: 0.0296, phi: 2.7042}, {A: 0.0144, phi: 3.3482}, {A: 0.0180, phi: 3.0182}, {A: 0.0159, phi: 3.4322}]},
+											  PZ_Aql: {period: 8.7513, functionUsed: PulsatingStar.COSINE, actualCenterMagnitude: 11.7, fourierTermsList: [{A: 0.365, phi: 4.66}, {A: 0.0459, phi: 1.75}, {A: 0.0208, phi: 2.76}, {A: 0.0188, phi: 5.98}]},
+											  MT_Tel: {period: 0.316897, functionUsed: PulsatingStar.COSINE, actualCenterMagnitude: 9.01, fourierTermsList: [{A: 2.60e-1, phi: 1.93}, {A: 7.35e-2, phi: 1.89}, {A: 1.66e-2, phi: 1.85}, {A: 1.00e-2, phi: 1.95}, {A: 5.60e-3, phi: 1.35}, {A: 4.89e-3, phi: 1.48}, {A: 4.53e-3, phi: 1.62}, {A: 1.51e-3, phi: 1.11}]},
+											  RR_Leo: {period: 0.4523933, functionUsed: PulsatingStar.COSINE, actualCenterMagnitude: 10.83, fourierTermsList: [{A: 4.55e-1, phi: 6.91e-1}, {A: 2.28e-1, phi: 5.16}, {A: 1.61e-1, phi: 3.69}, {A: 9.91e-2, phi: 2.33}, {A: 7.79e-2, phi: 1.02}, {A: 4.91e-2, phi: 5.81}, {A: 3.27e-2, phi: 4.45}, {A: 3.14e-2, phi: 2.97}]},
+											  VX_Her: {period: 0.45537282, functionUsed: PulsatingStar.COSINE, actualCenterMagnitude: 10.78, fourierTermsList: [{A: 4.58e-1, phi: 4.51}, {A: 2.12e-1, phi: 2.61e-1}, {A: 1.64e-1, phi: 2.56}, {A: 1.06e-1, phi: 4.96}, {A: 7.33e-2, phi: 1.07}, {A: 5.92e-2, phi: 3.57}, {A: 3.62e-2, phi: 6.07}, {A: 2.70e-2, phi: 2.20}]}};
