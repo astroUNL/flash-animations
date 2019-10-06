@@ -1,6 +1,6 @@
 readme.txt
 Applying the 2019-1 Patch and making other fixes
-2019-10-03
+2019-10-05
 
 
 === Summary ===
@@ -40,6 +40,7 @@ Other fixes:
 	+ The language selection menu in the Lunar Phase Simulator (see lunar_applet040-C).
 - If the loaded SWF loads another SWF, it may be necessary to change the call from the target.loadMovie(url) syntax to the loadMovie(url, target) syntax.
 - Sometimes programmatically attached labels do not always initialize correctly (particularly the first label attached). This seems to happen if the value of the label is passed via an initObject, and the text field has this variable assigned to it. The fix is to reassign the value after attaching. Examples:
+	+ The "Mercury" orbit label in the Planetary Orbit Sim (see kepler089-C.fla).
 	+ The celestial sphere's month label in the Motions of the Sun sim (see "Celestial Sphere Stuff/Month Label" in sunMotions068-C.fla).
 	+ The position label in the Moon Phases and the Horizon Diagram sim (see positionsDemonstrator011-C.fla).
 - Be careful about increasing the targeted Flash Player (e.g. switching from publishing for Flash Player 6 to Flash Player 10). This can eliminate some bugs, but introduce others.
