@@ -1,6 +1,6 @@
 readme.txt
 Applying the 2019-1 Patch and making other fixes
-2019-10-05
+2019-10-06
 
 
 === Summary ===
@@ -38,6 +38,8 @@ Other fixes:
 	+ The Flash MX ComboBox (search for "hitCheck" in the combobox code in the 2019-1 patch).
 	+ The constellations selection menu in the Rotating Sky Explorer (celHorComp039-C).
 	+ The language selection menu in the Lunar Phase Simulator (see lunar_applet040-C).
+- hitTestPoint (in AS3) also doesn't work correctly when scaled. Examples:
+	+ See the crosshairs in the Blink Comparator Simulator and the Variable Star Photometry Analyzer.
 - If the loaded SWF loads another SWF, it may be necessary to change the call from the target.loadMovie(url) syntax to the loadMovie(url, target) syntax.
 - Sometimes programmatically attached labels do not always initialize correctly (particularly the first label attached). This seems to happen if the value of the label is passed via an initObject, and the text field has this variable assigned to it. The fix is to reassign the value after attaching. Examples:
 	+ The "Mercury" orbit label in the Planetary Orbit Sim (see kepler089-C.fla).
