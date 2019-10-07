@@ -1,0 +1,20 @@
+2019-10-07 todo list.txt
+
+These animations/simulations need to be fixed for the ClassAction AIR app. The fixed Seasons and Ecliptic Simulator will also need to be updated in the NAAP AIR app.
+
+Module			Animation					Version					Problem
+======			=========					=======					=======
+ancientastro		Small-Angle Approximation Demonstrator		smallAngleDemo003-B			Button for diameter preset 3 is labelled "OP" instead of "3".
+ancientastro		Heliacal Rising Simulator			heliacalRisingSimulator015-B		Comboboxes need fixing.
+ancientastro		Big Dipper Clock									Combobox needs fixing.
+coordsmotion		Big Dipper 3D										Label bug for 50 degrees. Also, degree symbol appears not to be embedded.
+coordsmotion		Seasons and Ecliptic Simulator			eclipticSimulator024-B			Label bug in calendar strip ("Jan" is labelled "Sep").
+renaissance		Ptolemaic Phases of Venus								Disc appearance is not correct when scaled.
+renaissance		Epicycles Demo										Combobox needs fixing.
+light			Doppler Shift Demonstrator			dopplerShift draft 2			Source and observer diagram not drawn correctly when scaled (cropped). Also noticed
+														 weird things going on with button when animating. Recommend eliminated update trace.
+sunsolarenergy		Proton-Proton Animation									Starts animating immediately.
+sunsolarenergy		CNO Cycle Animation									Starts animating immediately.
+binaryvariablestars	Aliasing in Wagon Wheels								Bottom wheel doesn't spin in debugger, but does in compiled app, so double check final app.
+milkyway		Milky Way Rotational Velocity Explorer		milkyWayRotationalVelocity005-B		Result value and equal sign overlap.
+extrasolarplanets	Doppler Shift Demonstrator			dopplerShift draft 2			Same as above in light.
