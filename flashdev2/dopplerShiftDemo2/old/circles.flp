@@ -1,0 +1,8 @@
+﻿<flash_project name="circles" version="1">
+    <project_file path="./Circles.as" filetype="as" />
+    <project_file path="./circles.fla" filetype="fla" profile="" />
+    <project_file path="./PathsEditor.as" filetype="as" />
+    <project_file path="./LinearOscillatorPath.as" filetype="as" />
+    <project_file path="./CircularMotionPath.as" filetype="as" />
+    <project_file path="./paths editing.fla" filetype="fla" profile="" def_file="true" />
+</flash_project>

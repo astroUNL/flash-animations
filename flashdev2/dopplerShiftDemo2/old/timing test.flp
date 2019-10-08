@@ -1,0 +1,4 @@
+﻿<flash_project name="timing test" version="1">
+    <project_file path="./timing test.fla" filetype="fla" profile="" def_file="true" />
+    <project_file path="./Circles.as" filetype="as" />
+</flash_project>

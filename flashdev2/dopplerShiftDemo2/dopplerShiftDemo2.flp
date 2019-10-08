@@ -1,0 +1,16 @@
+﻿<flash_project name="dopplerShiftDemo2" version="1">
+    <project_file path="./Source.as" filetype="as" />
+    <project_file path="./Observer.as" filetype="as" />
+    <project_file path="./dopplerShiftDemo2.as" filetype="as" />
+    <project_file path="./dopplerShiftDemo2.fla" filetype="fla" profile="" def_file="true" />
+    <project_file path="./HistoryPlot.as" filetype="as" />
+    <project_file path="./PositionLog.as" filetype="as" />
+    <project_file path="./Position.as" filetype="as" />
+    <project_file path="./PhiInterval.as" filetype="as" />
+    <project_file path="./TimeKeeper.as" filetype="as" />
+    <project_file path="./ISource.as" filetype="as" />
+    <project_file path="./DraggableObject.as" filetype="as" />
+    <project_file path="./CircleCropper.as" filetype="as" />
+    <project_file path="./NAAPDialogWindow.as" filetype="as" />
+    <project_file path="./NAAPTitleBar.as" filetype="as" />
+</flash_project>

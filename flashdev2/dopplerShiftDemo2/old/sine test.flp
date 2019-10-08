@@ -1,0 +1,8 @@
+﻿<flash_project name="sine test" version="1">
+    <project_file path="./sinetest.as" filetype="as" />
+    <project_file path="./sinetest.fla" filetype="fla" profile="" def_file="true" />
+    <project_file path="./PhiInterval.as" filetype="as" />
+    <project_file path="./HistoryPlot.as" filetype="as" />
+    <project_file path="./WaveHistory.as" filetype="as" />
+    <project_file path="./WaveGenerator.as" filetype="as" />
+</flash_project>

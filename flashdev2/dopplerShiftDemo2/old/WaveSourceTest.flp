@@ -1,0 +1,4 @@
+﻿<flash_project name="WaveSourceTest" version="1">
+    <project_file path="./WaveSourceTest.fla" filetype="fla" profile="" />
+    <project_file path="./WaveSource.as" filetype="as" />
+</flash_project>

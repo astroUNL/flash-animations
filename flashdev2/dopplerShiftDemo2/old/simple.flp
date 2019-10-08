@@ -1,0 +1,8 @@
+﻿<flash_project name="simple" version="1">
+    <project_file path="./simple.as" filetype="as" />
+    <project_file path="./simple.fla" filetype="fla" profile="" def_file="true" />
+    <project_file path="./DraggableIcon.as" filetype="as" />
+    <project_file path="./SourceIcon.as" filetype="as" />
+    <project_file path="./ObserverIcon.as" filetype="as" />
+    <project_file path="./HistoryPoint.as" filetype="as" />
+</flash_project>
