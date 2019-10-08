@@ -1,4 +1,5 @@
-﻿
+﻿// 2019-10-07: modified to fix masking bug in AIR.
+
 package {
 	
 	import flash.display.Sprite;
@@ -89,6 +90,9 @@ package {
 			_maskSP.graphics.beginFill(0xff0000, 0.1);
 			_maskSP.graphics.drawRect(range.x, range.y, range.width, range.height);
 			_maskSP.graphics.endFill();
+			
+			// 2019-10-07: modified, the following line was added -- otherwise masking would not work correctly in AIR when scaled.
+			addChild(_maskSP);
 			
 			_maskedAreaSP = new Sprite();
 			_maskedAreaSP.mask = _maskSP;
@@ -342,7 +346,7 @@ package {
 			}
 			
 			
-			trace("update: "+(getTimer()-startTimer)+", wait: "+(startTimer-_timerLast));
+			//trace("update: "+(getTimer()-startTimer)+", wait: "+(startTimer-_timerLast));
 			_timerLast = startTimer;
 			
 			//trace(timeNow+", "+System.totalMemory+", "+(TimeKeeper.getTime()-timeNow));
