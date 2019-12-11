@@ -1,3 +1,7 @@
+2019-12-11: see readme.txt in this folder.
+
+***
+
 Remember, some of these projects link to code at
 C:\Program Files\Adobe\Adobe Flash CS3\en\Configuration\ActionScript 3.0\Classes\edu\unl\astro
 
