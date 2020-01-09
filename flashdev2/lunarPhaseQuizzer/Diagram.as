@@ -171,18 +171,18 @@ package {
 					if (stage.focus==sunlight) stage.focus = null;
 					sunlight.mouseEnabled = sunlight.tabEnabled = false;
 					moon.mouseEnabled = moon.tabEnabled = true;
-					firstRunInstructions.instructionsField.text = "Drag the Moon or change the Moon's\rphase to change the sunlight direction.";
+					firstRunInstructions.instructionsField.text = "Drag the moon or change the moon's\rphase to change the sunlight direction.";
 				}
 				else if (_mode==Diagram.HIDE_MOON) {
 					if (stage.focus==moon) stage.focus = null;
 					sunlight.mouseEnabled = sunlight.tabEnabled = true;
 					moon.mouseEnabled = moon.tabEnabled = false;
-					firstRunInstructions.instructionsField.text = "Drag the sunlight arrows or change the\rMoon's phase to move the Moon.";
+					firstRunInstructions.instructionsField.text = "Drag the sunlight arrows or change the\rmoon's phase to move the moon.";
 				}
 				else {
 					sunlight.mouseEnabled = sunlight.tabEnabled = true;
 					moon.mouseEnabled = moon.tabEnabled = true;
-					firstRunInstructions.instructionsField.text = "Drag the Moon or the sunlight arrows\rto change the Moon's phase.";
+					firstRunInstructions.instructionsField.text = "Drag the moon or the sunlight arrows\rto change the moon's phase.";
 				}				
 				
 				if (noTransition) finalizeMode();
